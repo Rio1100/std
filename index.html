@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Providing high-quality coursework, diploma works, essays, and more for students.">
+    <meta name="keywords" content="курсовые работы, дипломные работы, контрольные работы, рефераты, эссе">
     <title>Курсовые и дипломные работы для студентов</title>
     <style>
         body {
@@ -21,7 +23,7 @@
             background-color: #181818;
             color: #FFD700;
             padding: 20px;
-            text-align: right;
+            text-align: left; /* Изменено на left */
             font-size: 28px;
             font-weight: bold;
             width: 100%;
@@ -50,6 +52,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .keyword {
@@ -60,10 +63,12 @@
             color: #181818;
             flex: 1;
             margin-right: 10px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
+            transition: transform 0.2s;
         }
 
         .keyword:last-child {
@@ -75,6 +80,39 @@
             color: #fff;
             padding: 5px 10px;
             border-radius: 5px;
+        }
+
+        /* Input and button section */
+        .input-section {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .input-section input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px; /* Ограничение ширины поля ввода */
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .download-button {
+            background-color: #FFD700;
+            color: #181818;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .download-button:hover {
+            background-color: #FFC107; /* Цвет кнопки при наведении */
         }
 
         /* Reviews section */
@@ -92,6 +130,7 @@
         .reviews {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .review {
@@ -101,6 +140,7 @@
             width: 30%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: left;
+            margin-bottom: 20px;
         }
 
         .review h4 {
@@ -128,17 +168,40 @@
             margin: 10px 0;
             color: #FFD700;
         }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .keywords {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .keyword {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .reviews {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .review {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- Header -->
-    <div class="header">
+    <header class="header">
         dlya-studentov
-    </div>
+    </header>
 
     <!-- Main Container -->
-    <div class="container">
+    <main class="container">
         <h1>Курсовые и дипломные работы для студентов</h1>
 
         <!-- Ключевые слова -->
@@ -166,6 +229,12 @@
             </div>
         </div>
 
+        <!-- Input and Download Button -->
+        <div class="input-section">
+            <input type="text" id="article-topic" placeholder="Введите тему статьи" />
+            <button class="download-button" id="download-button">Скачать</button>
+        </div>
+
         <!-- Отзывы -->
         <div class="reviews-section">
             <h2>Отзывы наших студентов</h2>
@@ -184,12 +253,59 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer>
         <p>Свяжитесь с нами: info@dlya-studentov.com</p>
     </footer>
+
+    <!-- Script для API ChatGPT -->
+    <script>
+        document.getElementById('download-button').addEventListener('click', async function() {
+            const topic = document.getElementById('article-topic').value;
+            if (!topic) {
+                alert('Пожалуйста, введите тему статьи.');
+                return;
+            }
+
+            try {
+                // Здесь нужно будет указать ваш API-ключ и URL
+                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer YOUR_API_KEY'
+                    },
+                    body: JSON.stringify({
+                        model: 'gpt-3.5-turbo', // или gpt-4, если у вас есть доступ
+                        messages: [{ role: 'user', content: topic }],
+                    })
+                });
+
+                const data = await response.json();
+                if (data.choices && data.choices.length > 0) {
+                    const articleContent = data.choices[0].message.content;
+
+                    // Здесь вы можете обрабатывать полученный контент, например, скачать его как файл
+                    const blob = new Blob([articleContent], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'article.txt'; // Имя файла
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                } else {
+                    alert('Ошибка получения данных.');
+                }
+            } catch (error) {
+                console.error('Ошибка:', error);
+                alert('Произошла ошибка при запросе к API.');
+            }
+        });
+    </script>
 
 </body>
 </html>
