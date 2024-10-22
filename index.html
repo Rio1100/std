@@ -32,7 +32,7 @@
 
         /* Main container */
         .container {
-            background-color: #202020;
+            background: linear-gradient(to bottom, #181818, #202020);
             padding: 40px;
             border-radius: 10px;
             text-align: left;
@@ -53,16 +53,17 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            width: 100%; /* Полное использование ширины */
         }
 
         .input-section input {
-            padding: 10px;
+            padding: 15px;
             border: none;
             border-radius: 5px;
-            width: 100%;
-            max-width: 400px; /* Ограничение ширины поля ввода */
+            width: 100%; /* Полное использование ширины */
+            max-width: 100%; /* Убираем ограничение ширины */
+            font-size: 18px;
             margin-bottom: 10px;
-            font-size: 16px;
         }
 
         .download-button {
@@ -84,9 +85,9 @@
         /* Ключевые слова */
         .keywords {
             margin-top: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start; /* Выравнивание по левому краю */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Две колонки */
+            gap: 10px; /* Отступ между кнопками */
         }
 
         .keyword {
@@ -95,7 +96,6 @@
             border-radius: 5px;
             font-size: 18px;
             color: #181818;
-            margin: 10px; /* Отступ между кнопками */
             cursor: pointer;
             display: flex;
             justify-content: space-between;
