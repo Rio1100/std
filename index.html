@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Курсовые и дипломные работы</title>
+    <title>Курсовые и дипломные работы для студентов</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,22 +13,39 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
         }
+        /* Header */
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            width: 100%;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* Main container */
         .container {
             background-color: #fff;
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 500px;
+            max-width: 600px;
             width: 100%;
+            margin-top: 20px;
         }
         h1 {
             font-size: 24px;
             color: #333;
             margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #555;
         }
         input[type="text"] {
             padding: 10px;
@@ -68,40 +85,128 @@
             border-radius: 5px;
             text-decoration: none;
         }
+        /* Ключевые слова */
+        .keywords {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .keywords div {
+            background-color: #f2eae0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 5px;
+            flex: 1;
+        }
+        /* Отзывы */
+        .reviews {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .review {
+            background-color: #f9f7f6;
+            padding: 15px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .review h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .review p {
+            font-size: 14px;
+            color: #555;
+        }
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Курсовые и дипломные работы для студентов</h1>
-    <input type="text" id="topicInput" placeholder="Введите тему курсовой или дипломной работы">
-    <button onclick="generateResponse()">Создать</button>
-
-    <div class="result" id="responseSection" style="display: none;">
-        <h2>Результат:</h2>
-        <p id="responseText">Здесь будет отображаться результат вашего запроса.</p>
-        <a href="#" class="download-btn" id="downloadButton" style="display: none;">Скачать</a>
+    <!-- Header -->
+    <div class="header">
+        dlya-studentov
     </div>
-</div>
 
-<script>
-    function generateResponse() {
-        // Получаем введенную тему
-        const topic = document.getElementById('topicInput').value;
-        
-        // Пример API запроса — замените его реальной логикой для интеграции с API Chat GPT
-        const exampleResponse = `Ваш запрос: "${topic}". Пример сгенерированного текста на эту тему: "Курсовая работа посвящена изучению методов и подходов..."`;
-        
-        // Отображаем ответ на странице
-        document.getElementById('responseText').innerText = exampleResponse;
-        
-        // Показать результат
-        document.getElementById('responseSection').style.display = 'block';
-        
-        // Показать кнопку "Скачать"
-        document.getElementById('downloadButton').style.display = 'inline-block';
-    }
-</script>
+    <div class="container">
+        <h1>Курсовые и дипломные работы для студентов</h1>
+        <p>Ищете, где <strong>заказать курсовую работу</strong> или <strong>дипломную работу</strong>? Мы предлагаем помощь в написании рефератов, эссе, контрольных работ и магистерских диссертаций.</p>
+        <p>Наш сервис удобен для студентов, которым срочно требуется <strong>помощь с курсовыми</strong> или <strong>срочная помощь с дипломом</strong>. Вы можете легко <strong>заказать реферат онлайн</strong> или получить готовые работы недорого.</p>
+        <input type="text" id="topicInput" placeholder="Введите тему курсовой или дипломной работы">
+        <button onclick="generateResponse()">Создать</button>
+
+        <div class="result" id="responseSection" style="display: none;">
+            <h2>Результат:</h2>
+            <p id="responseText">Здесь будет отображаться результат вашего запроса.</p>
+            <a href="#" class="download-btn" id="downloadButton" style="display: none;">Скачать</a>
+        </div>
+
+        <!-- Ключевые слова -->
+        <div class="keywords">
+            <div>Курсовые работы</div>
+            <div>Дипломные работы</div>
+            <div>Контрольные работы</div>
+        </div>
+        <div class="keywords">
+            <div>Рефераты</div>
+            <div>Магистерские диссертации</div>
+            <div>Эссе</div>
+        </div>
+
+        <!-- Отзывы -->
+        <div class="reviews">
+            <div class="review">
+                <h4>Алексей Иванов</h4>
+                <p>Отличный сервис! Заказал дипломную работу и остался очень доволен. Быстро и качественно!</p>
+            </div>
+            <div class="review">
+                <h4>Мария Смирнова</h4>
+                <p>Очень помогли с курсовой. Мой преподаватель был в восторге от работы. Рекомендую!</p>
+            </div>
+            <div class="review">
+                <h4>Иван Петров</h4>
+                <p>Заказал контрольную работу. Все сделали в срок, даже раньше, чем ожидал. Спасибо!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Свяжитесь с нами: info@dlya-studentov.com</p>
+    </footer>
+
+    <script>
+        function generateResponse() {
+            // Получаем введенную тему
+            const topic = document.getElementById('topicInput').value;
+
+            // Пример ответа с использованием ключевых слов
+            const exampleResponse = `Ваш запрос: "${topic}". Пример сгенерированного текста: "Курсовая работа на тему '${topic}' поможет вам успешно сдать работу. Вы можете срочно заказать курсовую работу или реферат недорого в нашем сервисе."`;
+
+            // Отображаем ответ на странице
+            document.getElementById('responseText').innerText = exampleResponse;
+
+            // Показать результат
+            document.getElementById('responseSection').style.display = 'block';
+
+            // Показать кнопку "Скачать"
+            document.getElementById('downloadButton').style.display = 'inline-block';
+        }
+    </script>
 
 </body>
 </html>
