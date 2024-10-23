@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #f6f6f6, #ffffff);
+            background: linear-gradient(to bottom, #e0bbf5, #ffffff); /* Фиолетовый градиент */
             color: #333;
             margin: 0;
             padding: 0;
@@ -29,6 +29,7 @@
             font-weight: bold;
             width: 100%;
             text-transform: uppercase;
+            margin-left: 20px; /* Сдвинут вправо */
         }
 
         /* Navigation Menu */
@@ -69,6 +70,7 @@
             font-size: 28px;
             color: #333;
             text-align: center;
+            margin-left: 20px; /* Сдвинут вправо */
         }
 
         h2 {
@@ -183,18 +185,24 @@
         .reviews {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
+            flex-wrap: nowrap; /* Все блоки в одну строку */
+            overflow-x: auto; /* Горизонтальная прокрутка, если нужно */
             gap: 20px; /* Увеличены отступы между колонками */
         }
 
         .review {
-            background-color: #ffffff;
+            background: linear-gradient(to bottom right, #d4c3e2, #f6e6ff); /* Фиолетовый оттенок */
             padding: 20px;
             border-radius: 8px;
             width: 30%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: left;
             margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .review:hover {
+            transform: scale(1.02);
         }
 
         .review h4 {
@@ -276,9 +284,9 @@
             <p>Мы знаем, как важно успевать всё вовремя, поэтому готовы предложить свою помощь в написании различных учебных работ. Наш подход основан на личном опыте, взаимопомощи и искреннем стремлении сделать вашу учебу чуть легче. Работаем на волонтерских началах.</p>
         </section>
 
-        <!-- Reviews -->
+        <!-- Reviews Section -->
         <div class="reviews-section" id="reviews">
-            <h2>Отзывы наших студентов</h2>
+            <h2>Отзывы клиентов</h2>
             <div class="reviews">
                 <div class="review">
                     <h4>Анна Петрова</h4>
