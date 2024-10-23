@@ -286,4 +286,145 @@
     <!-- Main Content -->
     <main class="container">
         <h1>Помощь студентам в написании курсовых, дипломов, рефератов и других работ</h1>
-        <p class="subtitle">Заказать курсовую, дипломную работу, эссе и рефера
+        <p class="subtitle">Заказать курсовую, дипломную работу, эссе и реферат быстро и качественно.</p>
+
+        <!-- Text typing effect -->
+        <div class="word-editor">
+            <div id="typing-area"></div>
+            <span class="cursor" id="cursor"></span>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="article-topic" placeholder="Введите тему статьи" />
+            <button class="download-button" id="download-button">Скачать</button>
+        </div>
+
+        <!-- Ключевые слова с случайными значениями скачиваний -->
+        <div class="keywords" id="keywords-container">
+            <!-- Ключевые слова будут добавлены динамически через JavaScript -->
+        </div>
+
+        <!-- About Us Section -->
+        <section id="about">
+            <h2>О нас</h2>
+            <p>Мы - команда единомышленников, которые понимают, насколько сложной и напряжённой может быть студенческая жизнь. Наше желание - помочь студентам справляться с учебными заданиями, будь то курсовые работы, дипломы или рефераты. Мы работаем на добровольной основе, стремясь облегчить вам процесс учёбы и поддержать в трудные моменты.</p>
+            <p>Мы знаем, как важно успевать всё вовремя, поэтому готовы предложить свою помощь в написании различных учебных работ. Наш подход основан на личном опыте, взаимопомощи и искреннем стремлении сделать вашу учебу чуть легче. Работаем на волонтерских началах.</p>
+        </section>
+
+        <!-- Отзывы -->
+        <div class="reviews-section" id="reviews">
+            <h2>Отзывы наших студентов</h2>
+            <div class="reviews">
+                <div class="review">
+                    <h4>Анна Петрова</h4>
+                    <p>Отличный сервис! Очень помогли с курсовой работой, все было выполнено в срок. Рекомендую!</p>
+                </div>
+                <div class="review">
+                    <h4>Максим Иванов</h4>
+                    <p>Благодаря вам, защитил диплом на "отлично"! Качественная работа и оперативная поддержка.</p>
+                </div>
+                <div class="review">
+                    <h4>Елена Смирнова</h4>
+                    <p>Диплом был готов за неделю до сдачи, очень довольна! Спасибо огромное за помощь.</p>
+                </div>
+            </div>
+            <button class="show-more-button">Показать больше отзывов</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>Свяжитесь с нами: info@dlya-studentov.com</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="modal-text">Скачать статью по теме:</p>
+            <button class="close-button" id="close-button">Закрыть</button>
+        </div>
+    </div>
+
+    <script>
+        // Случайные значения скачиваний
+        const keywords = [
+            { name: "Курсовые работы", downloads: getRandomDownloads() },
+            { name: "Дипломные работы", downloads: getRandomDownloads() },
+            { name: "Контрольные работы", downloads: getRandomDownloads() },
+            { name: "Рефераты", downloads: getRandomDownloads() },
+            { name: "Эссе", downloads: getRandomDownloads() },
+            { name: "Магистерские диссертации", downloads: getRandomDownloads() }
+        ];
+
+        function getRandomDownloads() {
+            return Math.floor(Math.random() * (10312 - 6155 + 1)) + 6155;
+        }
+
+        const keywordsContainer = document.getElementById('keywords-container');
+        keywords.forEach(keyword => {
+            const keywordElement = document.createElement('div');
+            keywordElement.classList.add('keyword');
+            keywordElement.innerHTML = `${keyword.name} <span class="keyword-number">${keyword.downloads}</span>`;
+            keywordsContainer.appendChild(keywordElement);
+        });
+
+        // Modal logic
+        const modal = document.getElementById('modal');
+        const modalText = document.getElementById('modal-text');
+        const closeButton = document.getElementById('close-button');
+
+        document.getElementById('download-button').addEventListener('click', function() {
+            const topic = document.getElementById('article-topic').value;
+            if (topic) {
+                modalText.textContent = `Скачать статью по теме: "${topic}"?`;
+                modal.style.display = 'block';
+            }
+        });
+
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside of modal content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        // Показываем кнопку "Скачать" только после ввода текста
+        const inputField = document.getElementById('article-topic');
+        const downloadButton = document.getElementById('download-button');
+        inputField.addEventListener('input', function() {
+            if (inputField.value.trim() !== '') {
+                downloadButton.style.display = 'inline-block';
+            } else {
+                downloadButton.style.display = 'none';
+            }
+        });
+
+        // Show more reviews button
+        const showMoreButton = document.querySelector('.show-more-button');
+        showMoreButton.addEventListener('click', function() {
+            alert('Показать больше отзывов: этот функционал можно добавить позже.');
+        });
+
+        // Text typing effect
+        const typingText = "Дипломная работа на тему: Экономика России в цифрах.";
+        let index = 0;
+
+        function typeText() {
+            if (index < typingText.length) {
+                document.getElementById("typing-area").innerHTML += typingText.charAt(index);
+                index++;
+                setTimeout(typeText, 100); // Задержка между символами
+            }
+        }
+
+        window.onload = function() {
+            typeText();
+        };
+    </script>
+
+</body>
+</html>
