@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Providing high-quality coursework, diploma works, essays, and more for students.">
+    <meta name="keywords" content="курсовые работы, дипломные работы, контрольные работы, рефераты, эссе">
     <title>Курсовые и дипломные работы для студентов</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #181818, #404040);
+            background-color: #181818;
             color: #fff;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            scroll-behavior: smooth;
         }
 
         /* Header */
@@ -28,32 +31,34 @@
             text-transform: uppercase;
         }
 
-        /* Navigation */
-        .nav {
+        /* Navigation Menu */
+        nav {
+            background-color: #202020;
+            padding: 15px;
+            width: 100%;
             display: flex;
             justify-content: center;
-            background-color: #202020;
-            padding: 15px 0;
-            width: 100%;
+            margin-bottom: 20px;
         }
 
-        .nav a {
-            margin: 0 15px;
+        nav a {
             color: #FFD700;
             text-decoration: none;
             font-size: 18px;
+            margin: 0 15px;
+            cursor: pointer;
         }
 
-        .nav a:hover {
+        nav a:hover {
             color: #FF4500;
         }
 
         /* Main container */
         .container {
-            background-color: #303030;
+            background: linear-gradient(to bottom, #181818, #202020);
             padding: 40px;
             border-radius: 10px;
-            text-align: center;
+            text-align: left;
             max-width: 1200px;
             width: 100%;
             margin-top: 20px;
@@ -62,56 +67,64 @@
         h1 {
             font-size: 40px;
             color: #FFD700;
+            text-align: center;
         }
 
         h2 {
             font-size: 32px;
             color: #FFD700;
-            margin-bottom: 30px;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
-        p {
-            font-size: 16px;
-            color: #fff;
-            line-height: 1.6;
-            text-align: justify;
+        p.subtitle {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #FFD700;
         }
 
-        /* Input Section */
+        /* Input and button section */
         .input-section {
-            margin: 30px 0;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
         }
 
         .input-section input {
-            width: 100%;
-            padding: 20px;
-            font-size: 18px;
-            border-radius: 5px;
+            padding: 15px;
             border: none;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 100%;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
 
-        .input-section button {
+        .download-button {
             display: none;
             background-color: #FFD700;
             color: #181818;
-            padding: 15px 30px;
-            margin-top: 20px;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
             font-size: 18px;
             cursor: pointer;
+            transition: background-color 0.2s;
         }
 
-        .input-section button:hover {
-            background-color: #FF4500;
+        .download-button:hover {
+            background-color: #FFC107;
         }
 
         /* Keywords */
         .keywords {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 40px 0;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
 
         .keyword {
@@ -120,12 +133,11 @@
             border-radius: 5px;
             font-size: 18px;
             color: #181818;
-            margin-bottom: 20px;
-            width: 48%;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer;
+            transition: transform 0.2s;
         }
 
         .keyword-number {
@@ -133,12 +145,65 @@
             color: #fff;
             padding: 5px 10px;
             border-radius: 5px;
+            font-weight: bold;
         }
 
-        /* About section */
+        /* About Us Section */
         #about {
+            margin-top: 40px;
+            padding: 40px;
+            background-color: #252525;
+            border-radius: 10px;
+        }
+
+        #about h2 {
+            color: #FFD700;
             text-align: left;
-            margin: 50px 0;
+        }
+
+        #about p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            margin-top: 40px;
+        }
+
+        .reviews-section h2 {
+            font-size: 32px;
+            color: #FFD700;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .reviews {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .review {
+            background-color: #252525;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .review h4 {
+            font-size: 20px;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .review p {
+            font-size: 16px;
+            color: #fff;
         }
 
         /* Footer */
@@ -152,66 +217,65 @@
         }
 
         footer p {
+            margin: 10px 0;
             color: #FFD700;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .reviews {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .review {
+                width: 100%;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- Header -->
-    <div class="header">
+    <header class="header">
         dlya-studentov
-    </div>
+    </header>
 
     <!-- Navigation Menu -->
-    <div class="nav">
+    <nav>
         <a href="#services">Услуги</a>
         <a href="#about">О нас</a>
         <a href="#reviews">Отзывы</a>
         <a href="#contact">Контакты</a>
-    </div>
+    </nav>
 
-    <!-- Main Container -->
-    <div class="container">
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Заголовок и подзаголовок -->
         <h1>Помощь студентам в написании курсовых, дипломов, рефератов и других работ</h1>
-        <h2>Заказать курсовую, дипломную работу, эссе и реферат срочно - помощь студентам онлайн</h2>
+        <p class="subtitle">Заказать курсовую, дипломную работу, эссе и реферат срочно - помощь студентам онлайн</p>
 
-        <!-- Input Section -->
+        <!-- Input and Download Button -->
         <div class="input-section">
-            <input type="text" id="article-topic" placeholder="Введите тему статьи...">
-            <button id="download-button">Скачать</button>
+            <input type="text" id="article-topic" placeholder="Введите тему статьи" />
+            <button class="download-button" id="download-button">Скачать</button>
         </div>
 
-        <!-- Ключевые слова -->
+        <!-- Ключевые слова с случайными значениями скачиваний -->
         <div class="keywords" id="keywords-container">
-            <!-- Слова и количество скачиваний генерируются скриптом -->
+            <!-- Ключевые слова будут добавлены динамически через JavaScript -->
         </div>
 
-        <!-- О нас -->
+        <!-- About Us Section -->
         <section id="about">
             <h2>О нас</h2>
-            <p>
-                В условиях современной системы образования студенты сталкиваются с необходимостью выполнения различных видов учебных работ, таких как курсовые работы, дипломные проекты, рефераты, эссе и другие письменные задания. Эти работы требуют значительных временных и интеллектуальных затрат, а также владения специализированными навыками и знаниями. Не все студенты могут справиться с этим объемом задач в условиях ограниченного времени и высокого уровня стресса. 
-            </p>
-            <p>
-                Наша команда состоит из опытных специалистов, которые обладают глубокими знаниями в различных областях науки и образования. Мы стремимся поддержать студентов на всех этапах их учебного процесса, предлагая помощь в подготовке курсовых и дипломных работ, а также других учебных материалов. Мы оказываем содействие в анализе научной литературы, формулировании целей и задач исследований, а также в написании качественных, уникальных текстов.
-            </p>
-            <p>
-                Основная цель нашей работы заключается в облегчении процесса обучения для студентов, предоставлении им возможности лучше разобраться в изучаемом материале и усвоить его на практике. Мы стремимся содействовать академическому успеху каждого студента, который обращается к нам за помощью. 
-            </p>
-            <p>
-                Наша деятельность основывается на принципах добровольной помощи, что позволяет нам предоставлять услуги студентам безвозмездно. Мы понимаем, что студенческая жизнь может быть как финансово, так и эмоционально сложной, поэтому наша цель — поддержать студентов в трудные моменты их учебы и способствовать их академическим достижениям.
-            </p>
-            <p>
-                Мы прилагаем все усилия для того, чтобы предложить студентам качественные и своевременно выполненные работы. Наши специалисты всегда готовы проконсультировать студентов по вопросам, связанным с их учебными заданиями, а также оказать необходимую помощь в кратчайшие сроки. Мы стремимся создавать доверительные и профессиональные отношения с каждым нашим клиентом.
-            </p>
-            <p>
-                Таким образом, наша команда — это коллектив единомышленников, целью которого является повышение образовательного уровня студентов посредством предоставления им высококачественной помощи в выполнении учебных заданий. Мы уверены, что с нашей поддержкой каждый студент сможет успешно завершить свою учебную деятельность и получить желаемые результаты.
-            </p>
+            <p>Мы - команда единомышленников, которые понимают, насколько сложной и напряжённой может быть студенческая жизнь. Наше желание - помочь студентам справляться с учебными заданиями, будь то курсовые работы, дипломы или рефераты. Мы работаем на добровольной основе, стремясь облегчить вам процесс учёбы и поддержать в трудные моменты.</p>
+            <p>Мы знаем, как важно успевать всё вовремя, поэтому готовы предложить свою помощь в написании различных учебных работ. Наш подход основан на личном опыте, взаимопомощи и искреннем стремлении сделать вашу учебу чуть легче. Работаем на волонтерских началах.</p>
         </section>
 
         <!-- Отзывы -->
-        <div id="reviews">
+        <div class="reviews-section" id="reviews">
             <h2>Отзывы наших студентов</h2>
             <div class="reviews">
                 <div class="review">
@@ -228,7 +292,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer id="contact">
@@ -250,30 +314,32 @@
             return Math.floor(Math.random() * (10312 - 6155 + 1)) + 6155;
         }
 
-        // Отображение ключевых слов
-        const container = document.getElementById('keywords-container');
+        const keywordsContainer = document.getElementById('keywords-container');
         keywords.forEach(keyword => {
-            const div = document.createElement('div');
-            div.className = 'keyword';
-            div.innerHTML = `${keyword.name} <span class="keyword-number">${keyword.downloads}</span>`;
-            container.appendChild(div);
+            const keywordElement = document.createElement('div');
+            keywordElement.classList.add('keyword');
+            keywordElement.innerHTML = `${keyword.name} <span class="keyword-number">${keyword.downloads}</span>`;
+            keywordsContainer.appendChild(keywordElement);
         });
 
-        // Логика запроса и отображения кнопки "Скачать"
-        const input = document.getElementById('article-topic');
-        const button = document.getElementById('download-button');
-
-        input.addEventListener('input', () => {
-            if (input.value.trim() !== '') {
-                button.style.display = 'inline-block';
-            } else {
-                button.style.display = 'none';
+        // Placeholder для запроса на API и скачивания статьи
+        document.getElementById('download-button').addEventListener('click', function() {
+            const topic = document.getElementById('article-topic').value;
+            if (topic) {
+                alert(`Скачать статью по теме: ${topic}`);
+                // Здесь добавьте API запрос к GPT и логику скачивания статьи
             }
         });
 
-        button.addEventListener('click', () => {
-            // Логика запроса к API и скачивания
-            alert('Запрос к API для темы: ' + input.value);
+        // Показываем кнопку "Скачать" только после ввода текста
+        const inputField = document.getElementById('article-topic');
+        const downloadButton = document.getElementById('download-button');
+        inputField.addEventListener('input', function() {
+            if (inputField.value.trim() !== '') {
+                downloadButton.style.display = 'inline-block';
+            } else {
+                downloadButton.style.display = 'none';
+            }
         });
     </script>
 
