@@ -21,8 +21,8 @@
 
         /* Header */
         .header {
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #1a1a1a;
+            color: #fff;
             padding: 20px;
             text-align: left;
             font-size: 22px;
@@ -43,7 +43,7 @@
         }
 
         nav a {
-            color: #333;
+            color: #1a1a1a;
             text-decoration: none;
             font-size: 16px;
             margin: 0 10px;
@@ -56,7 +56,7 @@
 
         /* Main container */
         .container {
-            background: #fff;
+            background: linear-gradient(to bottom right, #ffffff, #e0e0e0);
             padding: 30px;
             border-radius: 8px;
             text-align: left;
@@ -105,7 +105,7 @@
 
         .download-button {
             display: none;
-            background-color: #333;
+            background-color: #0066cc;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -113,10 +113,11 @@
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.2s;
+            margin-top: 10px; /* Отступ сверху для кнопки */
         }
 
         .download-button:hover {
-            background-color: #555;
+            background-color: #005bb5;
         }
 
         /* Keywords */
@@ -152,7 +153,7 @@
         #about {
             margin-top: 30px;
             padding: 30px;
-            background-color: #fff;
+            background: linear-gradient(to bottom right, #ffffff, #e0e0e0);
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -187,7 +188,7 @@
         }
 
         .review {
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 8px;
             width: 30%;
@@ -224,8 +225,8 @@
 
         /* Footer */
         footer {
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #1a1a1a;
+            color: #fff;
             padding: 20px;
             text-align: center;
             width: 100%;
@@ -235,7 +236,7 @@
 
         footer p {
             margin: 10px 0;
-            color: #555;
+            color: #fff;
         }
 
         /* Text typing effect (Word-like) */
@@ -252,6 +253,8 @@
             max-width: 800px;
             margin: 30px auto;
             position: relative;
+            overflow: hidden; /* Скрыть переполнение */
+            height: 350px; /* Задаем высоту для блока */
         }
 
         .cursor {
@@ -288,21 +291,21 @@
         <h1>Помощь студентам в написании курсовых, дипломов, рефератов и других работ</h1>
         <p class="subtitle">Заказать курсовую, дипломную работу, эссе и реферат быстро и качественно.</p>
 
-        <!-- Text typing effect -->
-        <div class="word-editor">
-            <div id="typing-area"></div>
-            <span class="cursor" id="cursor"></span>
-        </div>
-
+        <!-- Input Section -->
         <div class="input-section">
             <input type="text" id="article-topic" placeholder="Введите тему статьи" />
-            <button class="download-button" id="download-button">Скачать</button>
+            <button class="download-button" id="download-button">Скачать статью по теме</button>
         </div>
 
-        <!-- Ключевые слова с случайными значениями скачиваний -->
-        <div class="keywords" id="keywords-container">
-            <!-- Ключевые слова будут добавлены динамически через JavaScript -->
+        <!-- Keywords Section -->
+        <div class="keywords" id="keywords-container"></div>
+
+        <!-- Word Editor Simulation -->
+        <div class="word-editor" id="typing-area">
+            <span class="cursor"></span>
         </div>
+
+        <div class="content-placeholder"></div>
 
         <!-- About Us Section -->
         <section id="about">
@@ -311,7 +314,7 @@
             <p>Мы знаем, как важно успевать всё вовремя, поэтому готовы предложить свою помощь в написании различных учебных работ. Наш подход основан на личном опыте, взаимопомощи и искреннем стремлении сделать вашу учебу чуть легче. Работаем на волонтерских началах.</p>
         </section>
 
-        <!-- Отзывы -->
+        <!-- Reviews -->
         <div class="reviews-section" id="reviews">
             <h2>Отзывы наших студентов</h2>
             <div class="reviews">
@@ -410,19 +413,25 @@
         });
 
         // Text typing effect
-        const typingText = "Дипломная работа на тему: Экономика России в цифрах.";
+        const typingText = `В последние годы экономика России претерпела значительные изменения, обусловленные как внутренними, так и внешними факторами. После экономического кризиса 2014 года, вызванного падением цен на нефть и введением международных санкций, Россия была вынуждена адаптироваться к новым условиям. Одним из ключевых аспектов, который повлиял на экономическую ситуацию в стране, стало развитие сельского хозяйства и импортозамещение. В 2020 году в результате пандемии COVID-19 экономика столкнулась с новыми вызовами, что привело к снижению ВВП и росту безработицы. Однако, по мере восстановления экономики, наблюдается рост производства и увеличение инвестиций в различные сектора. Также стоит отметить, что цифровизация экономики становится важным направлением для повышения конкурентоспособности. В условиях глобализации и цифровой трансформации Россия активно развивает технологии и инновации, стремясь выйти на новые рынки. Эти изменения открывают новые возможности для бизнеса и способствуют привлечению иностранных инвестиций. Важно также подчеркнуть, что Россия продолжает стремиться к устойчивому развитию, что является ключевым фактором для обеспечения долгосрочной экономической стабильности. По состоянию на 2024 год, экономика страны показывает признаки стабилизации и уверенного роста, что даёт основания для оптимизма в будущем.`;
+
         let index = 0;
 
         function typeText() {
             if (index < typingText.length) {
                 document.getElementById("typing-area").innerHTML += typingText.charAt(index);
                 index++;
-                setTimeout(typeText, 100); // Задержка между символами
+                setTimeout(typeText, 30); // Задержка между символами
+            } else {
+                // Показать курсор после завершения набора текста
+                document.querySelector(".cursor").style.display = 'none';
             }
         }
 
         window.onload = function() {
             typeText();
+            // Добавить курсор в конец текста
+            document.querySelector(".word-editor").innerHTML += '<span class="cursor"></span>';
         };
     </script>
 
