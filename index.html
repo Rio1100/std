@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #f0f0f0, #d0d0d0);
+            background: linear-gradient(to bottom, #f6f6f6, #ffffff);
             color: #333;
             margin: 0;
             padding: 0;
@@ -184,6 +184,7 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            gap: 20px; /* Увеличены отступы между колонками */
         }
 
         .review {
@@ -237,37 +238,6 @@
             margin: 10px 0;
             color: #fff;
         }
-
-        /* Text typing effect (Word-like) */
-        .word-editor {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 16px;
-            line-height: 1.8;
-            background-color: #fff;
-            padding: 40px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 800px;
-            margin: 30px auto;
-            position: relative;
-            overflow: hidden; /* Скрыть переполнение */
-            height: 350px; /* Задаем высоту для блока */
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 2px;
-            background-color: #333;
-            animation: blink 0.7s infinite;
-        }
-
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
-        }
     </style>
 </head>
 <body>
@@ -298,11 +268,6 @@
 
         <!-- Keywords Section -->
         <div class="keywords" id="keywords-container"></div>
-
-        <!-- Word Editor Simulation -->
-        <div class="word-editor" id="typing-area">
-            <span class="cursor"></span>
-        </div>
 
         <!-- About Us Section -->
         <section id="about">
@@ -336,14 +301,6 @@
     <footer id="contact">
         <p>Свяжитесь с нами: info@dlya-studentov.com</p>
     </footer>
-
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <p id="modal-text">Скачать статью по теме:</p>
-            <button class="close-button" id="close-button">Закрыть</button>
-        </div>
-    </div>
 
     <script>
         // Случайные значения скачиваний
@@ -408,23 +365,6 @@
         showMoreButton.addEventListener('click', function() {
             alert('Показать больше отзывов: этот функционал можно добавить позже.');
         });
-
-        function typeText() {
-            if (index < typingText.length) {
-                document.getElementById("typing-area").innerHTML += typingText.charAt(index);
-                index++;
-                setTimeout(typeText, 30); // Задержка между символами
-            } else {
-                // Показать курсор после завершения набора текста
-                document.querySelector(".cursor").style.display = 'none';
-            }
-        }
-
-        window.onload = function() {
-            typeText();
-            // Добавить курсор в конец текста
-            document.querySelector(".word-editor").innerHTML += '<span class="cursor"></span>';
-        };
     </script>
 
 </body>
