@@ -9,8 +9,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('https://studres.ru/templates/main/img/background.png');
-            background-size: cover;
+            background-color: #181818;
             color: #fff;
             margin: 0;
             padding: 0;
@@ -22,7 +21,7 @@
 
         /* Header */
         .header {
-            background-color: rgba(24, 24, 24, 0.9);
+            background-color: #181818;
             color: #FFD700;
             padding: 20px;
             text-align: left;
@@ -34,7 +33,7 @@
 
         /* Navigation Menu */
         nav {
-            background-color: rgba(32, 32, 32, 0.9);
+            background-color: #202020;
             padding: 15px;
             width: 100%;
             display: flex;
@@ -56,7 +55,7 @@
 
         /* Main container */
         .container {
-            background: rgba(37, 37, 37, 0.9);
+            background: linear-gradient(to bottom, #181818, #202020);
             padding: 40px;
             border-radius: 10px;
             text-align: left;
@@ -89,7 +88,8 @@
         .input-section {
             margin-top: 30px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             width: 100%;
         }
 
@@ -100,15 +100,11 @@
             width: 100%;
             max-width: 100%;
             font-size: 18px;
-            margin-right: 10px;
-            transition: transform 0.2s; /* Transition for scaling */
-        }
-
-        .input-section input:hover {
-            transform: scale(1.05); /* Scale up on hover */
+            margin-bottom: 10px;
         }
 
         .download-button {
+            display: none;
             background-color: #FFD700;
             color: #181818;
             padding: 10px 20px;
@@ -132,7 +128,7 @@
         }
 
         .keyword {
-            background-color: rgba(255, 215, 0, 0.9);
+            background-color: #FFD700;
             padding: 15px 20px;
             border-radius: 5px;
             font-size: 18px;
@@ -161,7 +157,7 @@
         #about {
             margin-top: 40px;
             padding: 40px;
-            background-color: rgba(37, 37, 37, 0.9);
+            background-color: #252525;
             border-radius: 10px;
         }
 
@@ -195,7 +191,7 @@
         }
 
         .review {
-            background-color: rgba(37, 37, 37, 0.9);
+            background-color: #252525;
             padding: 20px;
             border-radius: 10px;
             width: 30%;
@@ -232,7 +228,7 @@
 
         /* Footer */
         footer {
-            background-color: rgba(24, 24, 24, 0.9);
+            background-color: #181818;
             color: white;
             padding: 20px;
             text-align: center;
@@ -323,78 +319,120 @@
 
         <!-- Input and Download Button -->
         <div class="input-section">
-            <input type="text" placeholder="Введите название работы..." />
-            <button class="download-button" onclick="window.location.href='download-link.com';">Скачать</button>
+            <input type="text" id="article-topic" placeholder="Введите тему статьи" />
+            <button class="download-button" id="download-button">Скачать</button>
         </div>
 
-        <!-- Keywords Section -->
-        <div class="keywords">
-            <div class="keyword">Курсовые работы <span class="keyword-number">1</span></div>
-            <div class="keyword">Дипломные работы <span class="keyword-number">2</span></div>
-            <div class="keyword">Рефераты <span class="keyword-number">3</span></div>
-            <div class="keyword">Эссе <span class="keyword-number">4</span></div>
-            <div class="keyword">Контрольные работы <span class="keyword-number">5</span></div>
+        <!-- Ключевые слова с случайными значениями скачиваний -->
+        <div class="keywords" id="keywords-container">
+            <!-- Ключевые слова будут добавлены динамически через JavaScript -->
         </div>
 
         <!-- About Us Section -->
-        <div id="about">
+        <section id="about">
             <h2>О нас</h2>
-            <p>Мы предоставляем высококачественные курсовые, дипломные работы, контрольные и рефераты для студентов. Наша команда профессионалов поможет вам справиться с любыми учебными заданиями.</p>
-        </div>
+            <p>Мы - команда единомышленников, которые понимают, насколько сложной и напряжённой может быть студенческая жизнь. Наше желание - помочь студентам справляться с учебными заданиями, будь то курсовые работы, дипломы или рефераты. Мы работаем на добровольной основе, стремясь облегчить вам процесс учёбы и поддержать в трудные моменты.</p>
+            <p>Мы знаем, как важно успевать всё вовремя, поэтому готовы предложить свою помощь в написании различных учебных работ. Наш подход основан на личном опыте, взаимопомощи и искреннем стремлении сделать вашу учебу чуть легче. Работаем на волонтерских началах.</p>
+        </section>
 
-        <!-- Reviews Section -->
+        <!-- Отзывы -->
         <div class="reviews-section" id="reviews">
-            <h2>Отзывы</h2>
+            <h2>Отзывы наших студентов</h2>
             <div class="reviews">
                 <div class="review">
-                    <h4>Анна</h4>
-                    <p>Отличное качество работы и быстрая доставка. Рекомендую!</p>
+                    <h4>Анна Петрова</h4>
+                    <p>Отличный сервис! Очень помогли с курсовой работой, все было выполнено в срок. Рекомендую!</p>
                 </div>
                 <div class="review">
-                    <h4>Иван</h4>
-                    <p>Супер! Работа была выполнена в срок и на высоком уровне.</p>
+                    <h4>Максим Иванов</h4>
+                    <p>Благодаря вам, защитил диплом на "отлично"! Качественная работа и оперативная поддержка.</p>
                 </div>
                 <div class="review">
-                    <h4>Екатерина</h4>
-                    <p>Благодарю за помощь! Все сделано очень профессионально.</p>
+                    <h4>Елена Смирнова</h4>
+                    <p>Диплом был готов за неделю до сдачи, очень довольна! Спасибо огромное за помощь.</p>
                 </div>
             </div>
-            <button class="show-more-button">Показать еще отзывы</button>
+            <button class="show-more-button">Показать больше отзывов</button>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 dlya-studentov. Все права защищены.</p>
-        <p>Контакты: info@dlya-studentov.ru</p>
+    <footer id="contact">
+        <p>Свяжитесь с нами: info@dlya-studentov.com</p>
     </footer>
 
     <!-- Modal -->
-    <div class="modal" id="modal">
+    <div id="modal" class="modal">
         <div class="modal-content">
-            <span class="close-button" onclick="document.getElementById('modal').style.display='none'">Закрыть</span>
-            <p>Эта кнопка ведет к скачиванию!</p>
+            <p id="modal-text">Скачать статью по теме:</p>
+            <button class="close-button" id="close-button">Закрыть</button>
         </div>
     </div>
 
     <script>
-        // Открытие модального окна при нажатии на кнопку "Скачать"
-        document.querySelector('.download-button').onclick = function() {
-            document.getElementById('modal').style.display = 'block';
+        // Случайные значения скачиваний
+        const keywords = [
+            { name: "Курсовые работы", downloads: getRandomDownloads() },
+            { name: "Дипломные работы", downloads: getRandomDownloads() },
+            { name: "Контрольные работы", downloads: getRandomDownloads() },
+            { name: "Рефераты", downloads: getRandomDownloads() },
+            { name: "Эссе", downloads: getRandomDownloads() },
+            { name: "Магистерские диссертации", downloads: getRandomDownloads() }
+        ];
+
+        function getRandomDownloads() {
+            return Math.floor(Math.random() * (10312 - 6155 + 1)) + 6155;
         }
 
-        // Закрытие модального окна при нажатии на кнопку закрытия
-        document.querySelector('.close-button').onclick = function() {
-            document.getElementById('modal').style.display = 'none';
-        }
+        const keywordsContainer = document.getElementById('keywords-container');
+        keywords.forEach(keyword => {
+            const keywordElement = document.createElement('div');
+            keywordElement.classList.add('keyword');
+            keywordElement.innerHTML = ${keyword.name} <span class="keyword-number">${keyword.downloads}</span>;
+            keywordsContainer.appendChild(keywordElement);
+        });
 
-        // Закрытие модального окна при клике вне его
+        // Modal logic
+        const modal = document.getElementById('modal');
+        const modalText = document.getElementById('modal-text');
+        const closeButton = document.getElementById('close-button');
+
+        document.getElementById('download-button').addEventListener('click', function() {
+            const topic = document.getElementById('article-topic').value;
+            if (topic) {
+                modalText.textContent = Скачать статью по теме: "${topic}"?;
+                modal.style.display = 'block';
+            }
+        });
+
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside of modal content
         window.onclick = function(event) {
-            const modal = document.getElementById('modal');
-            if (event.target === modal) {
+            if (event.target == modal) {
                 modal.style.display = 'none';
             }
-        }
+        };
+
+        // Показываем кнопку "Скачать" только после ввода текста
+        const inputField = document.getElementById('article-topic');
+        const downloadButton = document.getElementById('download-button');
+        inputField.addEventListener('input', function() {
+            if (inputField.value.trim() !== '') {
+                downloadButton.style.display = 'inline-block';
+            } else {
+                downloadButton.style.display = 'none';
+            }
+        });
+
+        // Show more reviews button
+        const showMoreButton = document.querySelector('.show-more-button');
+        showMoreButton.addEventListener('click', function() {
+            alert('Показать больше отзывов: этот функционал можно добавить позже.');
+        });
     </script>
+
 </body>
 </html>
