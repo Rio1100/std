@@ -324,22 +324,8 @@
         </div>
 
         <!-- Ключевые слова -->
-        <div class="keywords">
-            <div class="keyword" onclick="selectKeyword('Курсовая работа')">
-                Курсовая работа <span class="keyword-number">1</span>
-            </div>
-            <div class="keyword" onclick="selectKeyword('Дипломная работа')">
-                Дипломная работа <span class="keyword-number">2</span>
-            </div>
-            <div class="keyword" onclick="selectKeyword('Реферат')">
-                Реферат <span class="keyword-number">3</span>
-            </div>
-            <div class="keyword" onclick="selectKeyword('Эссе')">
-                Эссе <span class="keyword-number">4</span>
-            </div>
-            <div class="keyword" onclick="selectKeyword('Контрольная работа')">
-                Контрольная работа <span class="keyword-number">5</span>
-            </div>
+        <div class="keywords" id="keywords-container">
+            <!-- Кнопки будут добавлены с помощью JavaScript -->
         </div>
 
         <!-- About Us Section -->
@@ -388,27 +374,53 @@
         const articleTopicInput = document.getElementById('article-topic');
         const modal = document.getElementById('download-modal');
         const modalTopic = document.getElementById('modal-topic');
+        const keywordsContainer = document.getElementById('keywords-container');
+
+        // Генерация случайных скачиваний
+        function getRandomDownloads() {
+            return Math.floor(Math.random() * (10312 - 6155 + 1)) + 6155;
+        }
+
+        // Ключевые слова
+        const keywords = [
+            'Курсовая работа',
+            'Дипломная работа',
+            'Реферат',
+            'Эссе',
+            'Контрольная работа',
+            'Научная статья'
+        ];
+
+        // Отображение ключевых слов
+        keywords.forEach(keyword => {
+            const downloads = getRandomDownloads();
+            const keywordButton = document.createElement('div');
+            keywordButton.className = 'keyword';
+            keywordButton.innerHTML = `${keyword} <span class="keyword-number">${downloads}</span>`;
+            keywordButton.onclick = () => selectKeyword(keyword);
+            keywordsContainer.appendChild(keywordButton);
+        });
 
         function selectKeyword(keyword) {
             articleTopicInput.value = keyword;
-            downloadButton.style.display = 'block'; // Show the download button when a keyword is selected
+            downloadButton.style.display = 'block'; // Показать кнопку скачивания, когда ключевое слово выбрано
         }
 
         downloadButton.addEventListener('click', function () {
             const topic = articleTopicInput.value;
             if (topic) {
                 modalTopic.textContent = topic;
-                modal.style.display = 'block'; // Show the modal when the button is clicked
-                articleTopicInput.value = ''; // Clear the input after download
-                downloadButton.style.display = 'none'; // Hide the button after download
+                modal.style.display = 'block'; // Показать модальное окно при нажатии кнопки
+                articleTopicInput.value = ''; // Очистить ввод после скачивания
+                downloadButton.style.display = 'none'; // Скрыть кнопку после скачивания
             }
         });
 
         function closeModal() {
-            modal.style.display = 'none'; // Close the modal
+            modal.style.display = 'none'; // Закрыть модальное окно
         }
 
-        // Show more reviews function (for demonstration)
+        // Показать больше отзывов (демонстрация)
         function showMoreReviews() {
             const newReview = document.createElement('div');
             newReview.className = 'review';
@@ -416,7 +428,7 @@
             document.querySelector('.reviews').appendChild(newReview);
         }
 
-        // Close the modal when the user clicks anywhere outside of it
+        // Закрыть модальное окно при нажатии вне его
         window.onclick = function (event) {
             if (event.target == modal) {
                 closeModal();
