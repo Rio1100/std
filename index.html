@@ -88,21 +88,18 @@
         .input-section {
             margin-top: 30px;
             display: flex;
-            justify-content: space-between; /* Разделение на ключевые слова и input */
-            align-items: center;
             width: 100%;
         }
 
         .input-section input {
             padding: 15px;
             border: none;
-            border-radius: 5px;
-            width: calc(100% - 150px); /* Уменьшаем ширину для кнопки */
+            border-radius: 5px 0 0 5px; /* Скругление углов только с левой стороны */
+            width: 100%; /* Строка ввода занимает всю ширину */
             font-size: 18px;
-            margin-right: 10px; /* Отступ между input и кнопкой */
             transition: transform 0.2s; /* Плавный переход размера */
-            background-color: #202020; /* Основной цвет фона */
-            color: #fff; /* Цвет текста */
+            background-color: #fff; /* Белый фон строки ввода */
+            color: #181818; /* Тёмный текст */
         }
 
         .input-section input:hover {
@@ -114,11 +111,10 @@
             color: #181818;
             padding: 15px 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 0 5px 5px 0; /* Скругление углов только с правой стороны */
             font-size: 18px;
             cursor: pointer;
             transition: background-color 0.2s;
-            display: none; /* Скрываем кнопку по умолчанию */
         }
 
         .download-button:hover {
@@ -427,7 +423,6 @@
 
         function selectKeyword(keyword) {
             articleTopicInput.value = keyword;
-            downloadButton.style.display = 'block'; // Показать кнопку скачивания, когда ключевое слово выбрано
         }
 
         downloadButton.addEventListener('click', function () {
@@ -436,7 +431,6 @@
                 modalTopic.textContent = topic;
                 modal.style.display = 'block'; // Показать модальное окно при нажатии кнопки
                 articleTopicInput.value = ''; // Очистить ввод после скачивания
-                downloadButton.style.display = 'none'; // Скрыть кнопку после скачивания
             }
         });
 
