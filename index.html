@@ -88,8 +88,8 @@
         .input-section {
             margin-top: 30px;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            justify-content: space-between; /* Разделение на ключевые слова и input */
+            align-items: center;
             width: 100%;
         }
 
@@ -97,28 +97,28 @@
             padding: 15px;
             border: none;
             border-radius: 5px;
-            width: 100%;
-            max-width: 100%;
+            width: calc(100% - 150px); /* Уменьшаем ширину для кнопки */
             font-size: 18px;
-            margin-bottom: 10px;
-            transition: transform 0.2s, background-color 0.2s;
+            margin-right: 10px; /* Отступ между input и кнопкой */
+            transition: background-color 0.2s; /* Плавный переход цвета */
+            background-color: #202020; /* Основной цвет фона */
         }
 
         .input-section input:hover {
-            transform: scale(1.05); /* Увеличение при наведении */
-            background-color: #292929; /* Ярче при наведении */
+            background-color: #D3D3D3; /* Светло-серый при наведении */
+            color: #181818; /* Цвет текста при наведении */
         }
 
         .download-button {
-            display: none;
             background-color: #FFD700;
             color: #181818;
-            padding: 10px 20px;
+            padding: 15px 20px;
             border: none;
             border-radius: 5px;
             font-size: 18px;
             cursor: pointer;
             transition: background-color 0.2s;
+            display: none; /* Скрываем кнопку по умолчанию */
         }
 
         .download-button:hover {
@@ -307,13 +307,13 @@
 
         .modal-content p {
             color: #FFD700;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .close-button {
-            background-color: #FF4500;
-            color: #fff;
-            padding: 10px 20px;
+            background-color: #FFD700;
+            color: #181818;
+            padding: 10px 15px;
             border: none;
             border-radius: 5px;
             font-size: 18px;
