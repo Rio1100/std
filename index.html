@@ -7,10 +7,8 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #635DFF; /* Фиолетовый фон */
-            background-image: url('/mnt/data/ideas-for-website.png'); /* Загрузка изображения как фон */
-            background-size: cover; /* Покрытие всего фона */
-            color: #333;
+            background: linear-gradient(to bottom, #000000, #434343); /* Фон: черный градиент */
+            color: #f0f0f0; /* Светлый цвет текста для контраста */
             margin: 0;
             padding: 0;
             display: flex;
@@ -20,31 +18,29 @@
 
         /* Header */
         .header {
-            background-color: #1a1a1a;
-            color: #fff;
+            background-color: #1a1a1a; /* Темный фон для заголовка */
+            color: #ffcc00; /* Яркий цвет текста */
             padding: 15px;
             text-align: center;
             font-size: 18px;
             font-weight: bold;
             width: 100%;
             margin-bottom: 20px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
         }
 
         /* Navigation Menu */
         nav {
-            background-color: #ffffffc7; /* Полупрозрачный белый */
+            background-color: #2a2a2a; /* Темный фон для навигации */
             padding: 10px;
             width: 100%;
             display: flex;
             justify-content: center;
-            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15); /* Тень */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
             margin-bottom: 10px;
-            border-radius: 10px; /* Закругленные углы */
         }
 
         nav a {
-            color: #333;
+            color: #ffcc00; /* Яркий цвет текста для ссылок */
             text-decoration: none;
             font-size: 14px;
             margin: 0 8px;
@@ -53,33 +49,32 @@
         }
 
         nav a:hover {
-            background-color: #f0f0f0;
+            background-color: #444; /* Светлый фон при наведении */
         }
 
         /* Main container */
         .container {
-            background: #fff;
+            background: #3a3a3a; /* Серый фон для основного контейнера */
             padding: 20px;
-            border-radius: 12px; /* Более сильное округление */
+            border-radius: 8px;
             text-align: left;
             max-width: 1000px;
             width: 90%;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Глубокая тень */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
             margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 24px;
-            color: #333;
+            font-size: 22px;
+            color: #ffcc00; /* Яркий цвет заголовка */
             text-align: center;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Добавлена тень к тексту */
         }
 
         p.subtitle {
             font-size: 14px;
             text-align: center;
             margin-bottom: 20px;
-            color: #666;
+            color: #ddd; /* Светло-серый цвет подзаголовка */
         }
 
         /* Input and button section */
@@ -93,27 +88,28 @@
 
         .input-section input {
             padding: 8px;
-            border: 1px solid #ccc;
+            border: 1px solid #ccc; /* Цвет рамки */
             border-radius: 4px;
             width: 100%;
             font-size: 14px;
             margin-bottom: 10px;
+            background: #555; /* Темный фон для поля ввода */
+            color: #fff; /* Белый цвет текста */
         }
 
         .download-button {
             display: none;
-            background-color: #0066cc;
+            background-color: #0066cc; /* Синий цвет кнопки */
             color: #fff;
-            padding: 10px 18px;
+            padding: 8px 15px;
             border: none;
-            border-radius: 6px;
+            border-radius: 4px;
             font-size: 14px;
             cursor: pointer;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Тень на кнопке */
         }
 
         .download-button:hover {
-            background-color: #005bb5;
+            background-color: #005bb5; /* Темный синий при наведении */
         }
 
         /* Keywords Section */
@@ -125,21 +121,20 @@
         }
 
         .keyword {
-            background-color: #f4c4d4;
+            background-color: #4a4a4a; /* Серый фон для ключевых слов */
             padding: 10px;
             border-radius: 5px;
             font-size: 14px;
-            color: #333;
+            color: #ffcc00; /* Яркий цвет текста */
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Тень под каждым блоком */
         }
 
         .keyword-number {
-            background-color: #c88fb1;
-            color: #fff;
+            background-color: #c88fb1; /* Цвет числа загрузок */
+            color: #fff; /* Белый цвет текста числа */
             padding: 4px 8px;
             border-radius: 3px;
             font-weight: bold;
@@ -149,14 +144,14 @@
         #about {
             margin-top: 20px;
             padding: 20px;
-            background: linear-gradient(to bottom right, #f9d7e6, #d1a5d3); /* Градиент */
+            background: linear-gradient(to bottom right, #6a0dad, #8e44ad); /* Градиент для секции "О нас" */
             border-radius: 8px;
-            color: #333;
+            color: #f0f0f0; /* Цвет текста в секции "О нас" */
         }
 
         #about h2 {
             font-size: 18px;
-            color: #333;
+            color: #ffcc00; /* Яркий цвет заголовка "О нас" */
         }
 
         #about p {
@@ -174,28 +169,28 @@
             display: flex;
             justify-content: space-between;
             gap: 10px;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Позволяет уменьшить количество строк */
         }
 
         .review {
-            background-color: #f0f0f0;
+            background-color: #4a4a4a; /* Серый фон для отзыва */
             padding: 15px;
             border-radius: 8px;
             width: 30%;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Более выразительная тень */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
             text-align: left;
             font-size: 14px;
+            color: #fff; /* Белый цвет текста отзыва */
         }
 
         /* Footer */
         footer {
-            background-color: #1a1a1a;
+            background-color: #1a1a1a; /* Темный фон для подвала */
             color: #fff;
             padding: 15px;
             text-align: center;
             width: 100%;
             margin-top: 20px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Тень на футере */
         }
 
         footer p {
@@ -235,30 +230,72 @@
         <!-- About Us Section -->
         <section id="about">
             <h2>О нас</h2>
-            <p>Мы - команда единомышленников, которые понимают, насколько сложной и напряжённой может быть студенческая жизнь. Наше желание - помочь студентам справляться с учебными заданиями, будь то курсовые работы, дипломы или рефераты.</p>
-            <p>Мы знаем, как важно успевать всё вовремя, поэтому готовы предложить свою помощь. Наш подход основан на личном опыте, взаимопомощи и искреннем стремлении сделать вашу учебу чуть легче.</p>
+            <p>Мы - команда единомышленников, которые понимают, насколько сложной и напряжённой может быть студенческая жизнь. Наше желание - помочь студентам справляться с учебными заданиями, будь то курсовые работы, дипломы или рефераты. Мы работаем на добровольной основе, стремясь облегчить вам процесс учёбы и поддержать в трудные моменты.</p>
+            <p>Мы знаем, как важно успевать всё вовремя, поэтому готовы предложить свою помощь в написании различных учебных работ. Наш подход основан на личном опыте, взаимопомощи и искреннем стремлении сделать вашу учебу чуть легче. Работаем на волонтерских началах.</p>
         </section>
 
         <!-- Reviews Section -->
         <div class="reviews-section" id="reviews">
             <div class="reviews">
                 <div class="review">
-                    "Отличная работа! Быстро и качественно."
+                    <h4>Анна Петрова</h4>
+                    <p>Отличный сервис! Очень помогли с курсовой работой, все было выполнено в срок. Рекомендую!</p>
                 </div>
                 <div class="review">
-                    "Всё было выполнено вовремя и на высшем уровне!"
+                    <h4>Максим Иванов</h4>
+                    <p>Благодаря вам, защитил диплом на "отлично"! Качественная работа и оперативная поддержка.</p>
                 </div>
                 <div class="review">
-                    "Сотрудничество превзошло все ожидания!"
+                    <h4>Елена Смирнова</h4>
+                    <p>Диплом был готов за неделю до сдачи, очень довольна! Спасибо огромное за помощь.</p>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>© 2024 Курсовые и дипломные работы для студентов</p>
+    <footer id="contact">
+        <p>Свяжитесь с нами: info@dlya-studentov.com</p>
     </footer>
+
+    <script>
+        // Логика показа кнопки "Скачать"
+        const inputField = document.getElementById('article-topic');
+        const downloadButton = document.getElementById('download-button');
+
+        inputField.addEventListener('input', function() {
+            if (inputField.value.trim() !== '') {
+                downloadButton.style.display = 'block';
+            } else {
+                downloadButton.style.display = 'none';
+            }
+        });
+
+        // Генерация ключевых слов с случайным количеством скачиваний
+        const keywords = [
+            { name: "Курсовые работы", downloads: getRandomDownloads() },
+            { name: "Дипломные работы", downloads: getRandomDownloads() },
+            { name: "Контрольные работы", downloads: getRandomDownloads() },
+            { name: "Рефераты", downloads: getRandomDownloads() },
+            { name: "Эссе", downloads: getRandomDownloads() },
+            { name: "Магистерские диссертации", downloads: getRandomDownloads() }
+        ];
+
+        function getRandomDownloads() {
+            return Math.floor(Math.random() * (10312 - 6155 + 1)) + 6155;
+        }
+
+        const keywordsContainer = document.getElementById('keywords-container');
+        keywords.forEach((keyword, index) => {
+            const keywordElement = document.createElement('div');
+            keywordElement.classList.add('keyword');
+            // Оттенки розового
+            const hue = 330 + (index * 10);
+            keywordElement.style.backgroundColor = `hsl(${hue}, 100%, 30%)`; /* Цвета ключевых слов */
+            keywordElement.innerHTML = `${keyword.name} <span class="keyword-number">${keyword.downloads}</span>`;
+            keywordsContainer.appendChild(keywordElement);
+        });
+    </script>
 
 </body>
 </html>
