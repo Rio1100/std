@@ -7,8 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://via.placeholder.com/1920x1080/000000/ffffff/?text=Background+Image'); /* Замените URL на реальный фон */
+            background: url('https://studres.ru/templates/main/img/background.png') no-repeat center center fixed; /* Задний фон */
             background-size: cover; /* Покрытие всего экрана */
             color: #f0f0f0; /* Светлый цвет текста для контраста */
             margin: 0;
@@ -20,30 +19,31 @@
 
         /* Header */
         .header {
-            background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон для заголовка */
-            color: #ffcc00; /* Яркий цвет текста */
+            background-color: rgba(26, 26, 26, 0.8); /* Прозрачный фон для заголовка */
+            color: #fff;
             padding: 15px;
             text-align: center;
             font-size: 18px;
             font-weight: bold;
             width: 100%;
             margin-bottom: 20px;
-            border-bottom: 2px solid #ffcc00; /* Нижняя граница */
+            border-radius: 5px; /* Скругление углов */
         }
 
         /* Navigation Menu */
         nav {
-            background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон для навигации */
+            background-color: rgba(255, 255, 255, 0.9); /* Прозрачный фон для меню */
             padding: 10px;
             width: 100%;
             display: flex;
             justify-content: center;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             margin-bottom: 10px;
+            border-radius: 5px; /* Скругление углов */
         }
 
         nav a {
-            color: #ffcc00; /* Яркий цвет текста для ссылок */
+            color: #333;
             text-decoration: none;
             font-size: 14px;
             margin: 0 8px;
@@ -52,12 +52,12 @@
         }
 
         nav a:hover {
-            background-color: rgba(255, 204, 0, 0.2); /* Легкий эффект при наведении */
+            background-color: #f0f0f0;
         }
 
         /* Main container */
         .container {
-            background: rgba(58, 58, 58, 0.9); /* Полупрозрачный серый фон для основного контейнера */
+            background: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон */
             padding: 20px;
             border-radius: 8px;
             text-align: left;
@@ -69,7 +69,7 @@
 
         h1 {
             font-size: 22px;
-            color: #ffcc00; /* Яркий цвет заголовка */
+            color: #333;
             text-align: center;
         }
 
@@ -77,7 +77,7 @@
             font-size: 14px;
             text-align: center;
             margin-bottom: 20px;
-            color: #ddd; /* Светло-серый цвет подзаголовка */
+            color: #666;
         }
 
         /* Input and button section */
@@ -91,18 +91,16 @@
 
         .input-section input {
             padding: 8px;
-            border: 1px solid #ccc; /* Цвет рамки */
+            border: 1px solid #ccc;
             border-radius: 4px;
             width: 100%;
             font-size: 14px;
             margin-bottom: 10px;
-            background: #555; /* Темный фон для поля ввода */
-            color: #fff; /* Белый цвет текста */
         }
 
         .download-button {
             display: none;
-            background-color: #0066cc; /* Синий цвет кнопки */
+            background-color: #0066cc;
             color: #fff;
             padding: 8px 15px;
             border: none;
@@ -112,7 +110,7 @@
         }
 
         .download-button:hover {
-            background-color: #005bb5; /* Темный синий при наведении */
+            background-color: #005bb5;
         }
 
         /* Keywords Section */
@@ -124,11 +122,11 @@
         }
 
         .keyword {
-            background-color: #4a4a4a; /* Серый фон для ключевых слов */
+            background-color: rgba(255, 192, 203, 0.9); /* Полупрозрачный фон для ключевых слов */
             padding: 10px;
             border-radius: 5px;
             font-size: 14px;
-            color: #ffcc00; /* Яркий цвет текста */
+            color: #333;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -136,8 +134,8 @@
         }
 
         .keyword-number {
-            background-color: #c88fb1; /* Цвет числа загрузок */
-            color: #fff; /* Белый цвет текста числа */
+            background-color: #c88fb1;
+            color: #fff;
             padding: 4px 8px;
             border-radius: 3px;
             font-weight: bold;
@@ -147,14 +145,14 @@
         #about {
             margin-top: 20px;
             padding: 20px;
-            background: linear-gradient(to bottom right, #6a0dad, #8e44ad); /* Градиент для секции "О нас" */
+            background: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон для блока "О нас" */
             border-radius: 8px;
-            color: #f0f0f0; /* Цвет текста в секции "О нас" */
+            color: #333;
         }
 
         #about h2 {
             font-size: 18px;
-            color: #ffcc00; /* Яркий цвет заголовка "О нас" */
+            color: #333;
         }
 
         #about p {
@@ -176,19 +174,18 @@
         }
 
         .review {
-            background-color: #4a4a4a; /* Серый фон для отзыва */
+            background-color: rgba(240, 240, 240, 0.9); /* Полупрозрачный фон для отзывов */
             padding: 15px;
             border-radius: 8px;
             width: 30%;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             text-align: left;
             font-size: 14px;
-            color: #fff; /* Белый цвет текста отзыва */
         }
 
         /* Footer */
         footer {
-            background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон для подвала */
+            background-color: rgba(26, 26, 26, 0.8); /* Прозрачный фон для футера */
             color: #fff;
             padding: 15px;
             text-align: center;
@@ -238,7 +235,7 @@
         </section>
 
         <!-- Reviews Section -->
-        <div class="reviews-section">
+        <div class="reviews-section" id="reviews">
             <h2>Отзывы клиентов</h2>
             <div class="reviews">
                 <div class="review">
@@ -295,7 +292,7 @@
             keywordElement.classList.add('keyword');
             // Оттенки розового
             const hue = 330 + (index * 10);
-            keywordElement.style.backgroundColor = `hsl(${hue}, 100%, 30%)`; /* Цвета ключевых слов */
+            keywordElement.style.backgroundColor = `hsl(${hue}, 100%, 85%)`;
             keywordElement.innerHTML = `${keyword.name} <span class="keyword-number">${keyword.downloads}</span>`;
             keywordsContainer.appendChild(keywordElement);
         });
