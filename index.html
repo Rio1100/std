@@ -7,7 +7,9 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #000000, #434343); /* Фон: черный градиент */
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://via.placeholder.com/1920x1080/000000/ffffff/?text=Background+Image'); /* Замените URL на реальный фон */
+            background-size: cover; /* Покрытие всего экрана */
             color: #f0f0f0; /* Светлый цвет текста для контраста */
             margin: 0;
             padding: 0;
@@ -18,7 +20,7 @@
 
         /* Header */
         .header {
-            background-color: #1a1a1a; /* Темный фон для заголовка */
+            background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон для заголовка */
             color: #ffcc00; /* Яркий цвет текста */
             padding: 15px;
             text-align: center;
@@ -26,16 +28,17 @@
             font-weight: bold;
             width: 100%;
             margin-bottom: 20px;
+            border-bottom: 2px solid #ffcc00; /* Нижняя граница */
         }
 
         /* Navigation Menu */
         nav {
-            background-color: #2a2a2a; /* Темный фон для навигации */
+            background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон для навигации */
             padding: 10px;
             width: 100%;
             display: flex;
             justify-content: center;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
             margin-bottom: 10px;
         }
 
@@ -49,18 +52,18 @@
         }
 
         nav a:hover {
-            background-color: #444; /* Светлый фон при наведении */
+            background-color: rgba(255, 204, 0, 0.2); /* Легкий эффект при наведении */
         }
 
         /* Main container */
         .container {
-            background: #3a3a3a; /* Серый фон для основного контейнера */
+            background: rgba(58, 58, 58, 0.9); /* Полупрозрачный серый фон для основного контейнера */
             padding: 20px;
             border-radius: 8px;
             text-align: left;
             max-width: 1000px;
             width: 90%;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
 
@@ -185,7 +188,7 @@
 
         /* Footer */
         footer {
-            background-color: #1a1a1a; /* Темный фон для подвала */
+            background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон для подвала */
             color: #fff;
             padding: 15px;
             text-align: center;
@@ -235,15 +238,16 @@
         </section>
 
         <!-- Reviews Section -->
-        <div class="reviews-section" id="reviews">
+        <div class="reviews-section">
+            <h2>Отзывы клиентов</h2>
             <div class="reviews">
                 <div class="review">
-                    <h4>Анна Петрова</h4>
-                    <p>Отличный сервис! Очень помогли с курсовой работой, все было выполнено в срок. Рекомендую!</p>
+                    <h4>Иван Петров</h4>
+                    <p>Отличная работа, очень благодарен команде!</p>
                 </div>
                 <div class="review">
-                    <h4>Максим Иванов</h4>
-                    <p>Благодаря вам, защитил диплом на "отлично"! Качественная работа и оперативная поддержка.</p>
+                    <h4>Мария Кузнецова</h4>
+                    <p>Качественно и быстро, рекомендую!</p>
                 </div>
                 <div class="review">
                     <h4>Елена Смирнова</h4>
