@@ -124,10 +124,12 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
+            background-color: #b0b0b0; /* Серо-матовый цвет */
+            padding: 10px;
+            border-radius: 5px; /* Скругление углов */
         }
 
         .keyword {
-            background-color: rgba(255, 192, 203, 0.9); /* Полупрозрачный фон для ключевых слов */
             padding: 10px;
             border-radius: 5px;
             font-size: 14px;
@@ -231,14 +233,14 @@
         </div>
 
         <!-- Keywords Section -->
-        <div class="keywords" id="keywords-container"></div>
-
-        <!-- About Us Section -->
-        <section id="about">
-            <h2>О нас</h2>
-            <p>Мы - команда единомышленников, которые понимают, насколько сложной и напряжённой может быть студенческая жизнь. Наше желание - помочь студентам справляться с учебными заданиями, будь то курсовые работы, дипломы или рефераты. Мы работаем на добровольной основе, стремясь облегчить вам процесс учёбы и поддержать в трудные моменты.</p>
-            <p>Мы знаем, как важно успевать всё вовремя, поэтому готовы предложить свою помощь в написании различных учебных работ. Наш подход основан на личном опыте, взаимопомощи и искреннем стремлении сделать вашу учебу чуть легче. Работаем на волонтерских началах.</p>
-        </section>
+        <div class="keywords" id="keywords-container">
+            <div class="keyword">Курсовые работы <span class="keyword-number">10235</span></div>
+            <div class="keyword">Дипломные работы <span class="keyword-number">9532</span></div>
+            <div class="keyword">Контрольные работы <span class="keyword-number">12005</span></div>
+            <div class="keyword">Рефераты <span class="keyword-number">8430</span></div>
+            <div class="keyword">Эссе <span class="keyword-number">6200</span></div>
+            <div class="keyword">Магистерские диссертации <span class="keyword-number">3015</span></div>
+        </div>
 
         <!-- Reviews Section -->
         <div class="reviews-section" id="reviews">
@@ -256,19 +258,13 @@
                     <h4>Елена Смирнова</h4>
                     <p>Рекомендую! Отличная поддержка и профессионализм!</p>
                 </div>
-                <div class="review">
-                    <h4>Игорь Сидоров</h4>
-                    <p>Не ожидал такой скорости! Вся работа была выполнена на высшем уровне.</p>
-                </div>
-                <div class="review">
-                    <h4>Ольга Васильева</h4>
-                    <p>С помощью этой команды я без труда защитила свою курсовую работу!</p>
-                </div>
-                <div class="review">
-                    <h4>Дмитрий Михайлов</h4>
-                    <p>Благодарен за помощь! Отличная команда и профессиональный подход.</p>
-                </div>
             </div>
+        </div>
+
+        <!-- About Us Section -->
+        <div id="about">
+            <h2>О нас</h2>
+            <p>Мы предоставляем качественные услуги по написанию учебных работ для студентов. Наша команда состоит из профессиональных авторов с большим опытом работы в данной области.</p>
         </div>
     </main>
 
@@ -308,9 +304,8 @@
         keywords.forEach((keyword, index) => {
             const keywordElement = document.createElement('div');
             keywordElement.classList.add('keyword');
-            // Оттенки розового
-            const hue = 330 + (index * 10);
-            keywordElement.style.backgroundColor = `hsl(${hue}, 100%, 85%)`;
+            // Оттенки серого
+            keywordElement.style.backgroundColor = `#b0b0b0`;
             keywordElement.innerHTML = `${keyword.name} <span class="keyword-number">${keyword.downloads}</span>`;
             keywordsContainer.appendChild(keywordElement);
         });
