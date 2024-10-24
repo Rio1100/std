@@ -84,33 +84,38 @@
         .input-section {
             margin-top: 20px;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            align-items: center; /* Выравнивание по центру по вертикали */
             width: 100%;
         }
 
         .input-section input {
-            padding: 8px;
+            padding: 10px; /* Увеличение внутреннего отступа */
             border: 1px solid #ccc;
             border-radius: 4px;
-            width: 100%;
-            font-size: 14px;
-            margin-bottom: 10px;
+            width: 100%; /* Ширина 100% */
+            font-size: 16px; /* Увеличение размера шрифта */
+            transition: all 0.3s ease; /* Плавный переход */
+            margin-right: 10px; /* Отступ справа для кнопки */
+        }
+
+        .input-section input:hover {
+            width: 105%; /* Увеличение ширины при наведении */
+            border-color: #0066cc; /* Изменение цвета границы при наведении */
         }
 
         .download-button {
-            display: none;
             background-color: #0066cc;
             color: #fff;
-            padding: 8px 15px;
+            padding: 10px 15px;
             border: none;
             border-radius: 4px;
-            font-size: 14px;
+            font-size: 16px; /* Увеличение размера шрифта */
             cursor: pointer;
+            transition: background-color 0.3s ease; /* Плавный переход */
         }
 
         .download-button:hover {
-            background-color: #005bb5;
+            background-color: #005bb5; /* Более темный цвет при наведении */
         }
 
         /* Keywords Section */
@@ -221,7 +226,7 @@
         <!-- Input Section -->
         <div class="input-section">
             <input type="text" id="article-topic" placeholder="Введите тему статьи" />
-            <button class="download-button" id="download-button">Скачать статью по теме</button>
+            <button class="download-button" id="download-button">Скачать</button>
         </div>
 
         <!-- Keywords Section -->
@@ -240,23 +245,23 @@
             <div class="reviews">
                 <div class="review">
                     <h4>Иван Петров</h4>
-                    <p>Отличная работа, очень благодарен команде!</p>
+                    <p>Отличная работа, очень благодарен команде за помощь!</p>
                 </div>
                 <div class="review">
-                    <h4>Мария Кузнецова</h4>
-                    <p>Качественно и быстро, рекомендую!</p>
+                    <h4>Мария Смирнова</h4>
+                    <p>Ребята помогли мне с курсовой, все сделали вовремя!</p>
                 </div>
                 <div class="review">
-                    <h4>Елена Смирнова</h4>
-                    <p>Диплом был готов за неделю до сдачи, очень довольна! Спасибо огромное за помощь.</p>
+                    <h4>Алексей Иванов</h4>
+                    <p>Не ожидал такой скорости и качества. Рекомендую!</p>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer id="contact">
-        <p>Свяжитесь с нами: info@dlya-studentov.ru</p>
+    <footer>
+        <p>© 2024 studres.ru</p>
     </footer>
 
     <script>
