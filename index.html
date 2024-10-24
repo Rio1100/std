@@ -3,206 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Providing high-quality coursework, diploma works, essays, and more for students.">
+    <meta name="keywords" content="курсовые работы, дипломные работы, контрольные работы, рефераты, эссе">
     <title>Курсовые и дипломные работы для студентов</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: url('https://studres.ru/templates/main/img/background.png') no-repeat center center fixed; /* Задний фон */
-            background-size: cover; /* Покрытие всего экрана */
-            color: #f0f0f0; /* Светлый цвет текста для контраста */
+            background-color: #181818;
+            color: #fff;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            scroll-behavior: smooth;
         }
 
         /* Header */
         .header {
-            background-color: rgba(26, 26, 26, 0.8); /* Прозрачный фон для заголовка */
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-            font-size: 18px;
+            background-color: #181818;
+            color: #FFD700;
+            padding: 20px;
+            text-align: left;
+            font-size: 28px;
             font-weight: bold;
             width: 100%;
-            margin-bottom: 20px;
-            border-radius: 5px; /* Скругление углов */
+            text-transform: uppercase;
         }
 
         /* Navigation Menu */
         nav {
-            background-color: rgba(255, 255, 255, 0.9); /* Прозрачный фон для меню */
-            padding: 10px;
+            background-color: #202020;
+            padding: 15px;
             width: 100%;
             display: flex;
             justify-content: center;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 10px;
-            border-radius: 5px; /* Скругление углов */
+            margin-bottom: 20px;
         }
 
         nav a {
-            color: #333;
+            color: #FFD700;
             text-decoration: none;
-            font-size: 14px;
-            margin: 0 8px;
-            padding: 8px;
-            border-radius: 5px;
+            font-size: 18px;
+            margin: 0 15px;
+            cursor: pointer;
         }
 
         nav a:hover {
-            background-color: #f0f0f0;
+            color: #FF4500;
         }
 
         /* Main container */
         .container {
-            background: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон */
-            padding: 20px;
-            border-radius: 8px;
+            background: linear-gradient(to bottom, #181818, #202020);
+            padding: 40px;
+            border-radius: 10px;
             text-align: left;
-            max-width: 1000px;
-            width: 90%;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            max-width: 1200px;
+            width: 100%;
+            margin-top: 20px;
         }
 
         h1 {
-            font-size: 22px;
-            color: #333;
+            font-size: 40px;
+            color: #FFD700;
             text-align: center;
         }
 
-        p.subtitle {
-            font-size: 14px;
+        h2 {
+            font-size: 32px;
+            color: #FFD700;
             text-align: center;
             margin-bottom: 20px;
-            color: #666;
+        }
+
+        p.subtitle {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #FFD700;
         }
 
         /* Input and button section */
         .input-section {
-            margin-top: 20px;
+            margin-top: 30px;
             display: flex;
-            align-items: center; /* Выравнивание по центру по вертикали */
+            flex-direction: column;
+            align-items: flex-start;
             width: 100%;
         }
 
         .input-section input {
-            padding: 10px; /* Увеличение внутреннего отступа */
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100%; /* Ширина 100% */
-            font-size: 16px; /* Увеличение размера шрифта */
-            transition: all 0.3s ease; /* Плавный переход */
-            margin-right: 10px; /* Отступ справа для кнопки */
-        }
-
-        .input-section input:hover {
-            width: 105%; /* Увеличение ширины при наведении */
-            border-color: #0066cc; /* Изменение цвета границы при наведении */
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 100%;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
 
         .download-button {
-            background-color: #0066cc;
-            color: #fff;
-            padding: 10px 15px;
+            display: none;
+            background-color: #FFD700;
+            color: #181818;
+            padding: 10px 20px;
             border: none;
-            border-radius: 4px;
-            font-size: 16px; /* Увеличение размера шрифта */
+            border-radius: 5px;
+            font-size: 18px;
             cursor: pointer;
-            transition: background-color 0.3s ease; /* Плавный переход */
+            transition: background-color 0.2s;
         }
 
         .download-button:hover {
-            background-color: #005bb5; /* Более темный цвет при наведении */
+            background-color: #FFC107;
         }
 
-        /* Keywords Section */
+        /* Keywords */
         .keywords {
-            margin-top: 20px;
+            margin-top: 30px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
-            background-color: #b0b0b0; /* Серо-матовый цвет */
-            padding: 10px;
-            border-radius: 5px; /* Скругление углов */
         }
 
         .keyword {
-            padding: 10px;
+            background-color: #FFD700;
+            padding: 15px 20px;
             border-radius: 5px;
-            font-size: 14px;
-            color: #333;
+            font-size: 18px;
+            color: #181818;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .keyword:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .keyword-number {
-            background-color: #c88fb1;
+            background-color: #FF4500;
             color: #fff;
-            padding: 4px 8px;
-            border-radius: 3px;
+            padding: 5px 10px;
+            border-radius: 5px;
             font-weight: bold;
         }
 
         /* About Us Section */
         #about {
-            margin-top: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон для блока "О нас" */
-            border-radius: 8px;
-            color: #333;
+            margin-top: 40px;
+            padding: 40px;
+            background-color: #252525;
+            border-radius: 10px;
         }
 
         #about h2 {
-            font-size: 18px;
-            color: #333;
+            color: #FFD700;
+            text-align: left;
         }
 
         #about p {
-            font-size: 14px;
-            line-height: 1.5;
-            margin-top: 10px;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-top: 20px;
         }
 
         /* Reviews Section */
         .reviews-section {
-            margin-top: 20px;
-            text-align: center; /* Центрируем текст */
+            margin-top: 40px;
+        }
+
+        .reviews-section h2 {
+            font-size: 32px;
+            color: #FFD700;
+            margin-bottom: 30px;
+            text-align: left;
         }
 
         .reviews {
             display: flex;
-            justify-content: space-around; /* Выравниваем отзывы по всему доступному пространству */
-            flex-wrap: wrap; /* Позволяет отзывам переноситься на следующую строку при необходимости */
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .review {
-            background-color: rgba(240, 240, 240, 0.9); /* Полупрозрачный фон для отзывов */
-            padding: 15px;
-            border-radius: 8px;
-            width: 30%; /* Устанавливаем ширину для трех столбцов */
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #252525;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: left;
-            font-size: 14px;
-            margin: 10px 0; /* Отступы сверху и снизу */
+            margin-bottom: 20px;
+        }
+
+        .review h4 {
+            font-size: 20px;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .review p {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .show-more-button {
+            background-color: #FFD700;
+            color: #181818;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .show-more-button:hover {
+            background-color: #FFC107;
         }
 
         /* Footer */
         footer {
-            background-color: rgba(26, 26, 26, 0.8); /* Прозрачный фон для футера */
-            color: #fff;
-            padding: 15px;
+            background-color: #181818;
+            color: white;
+            padding: 20px;
             text-align: center;
             width: 100%;
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         footer p {
-            margin: 0;
+            margin: 10px 0;
+            color: #FFD700;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .reviews {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .review {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: #181818;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #FFD700;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .modal-content p {
+            color: #FFD700;
+            font-size: 20px;
+        }
+
+        .close-button {
+            background-color: #FF4500;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .close-button:hover {
+            background-color: #FF6347;
         }
     </style>
 </head>
@@ -210,7 +301,7 @@
 
     <!-- Header -->
     <header class="header">
-        Курсовые и дипломные работы
+        dlya-studentov
     </header>
 
     <!-- Navigation Menu -->
@@ -223,70 +314,63 @@
 
     <!-- Main Content -->
     <main class="container">
-        <h1>Помощь студентам в написании учебных работ</h1>
-        <p class="subtitle">Заказать курсовую, дипломную работу, эссе и реферат быстро и качественно.</p>
+        <h1>Помощь студентам в написании курсовых, дипломов, рефератов и других работ</h1>
+        <p class="subtitle">Заказать курсовую, дипломную работу, эссе и реферат срочно - помощь студентам онлайн</p>
 
-        <!-- Input Section -->
+        <!-- Input and Download Button -->
         <div class="input-section">
             <input type="text" id="article-topic" placeholder="Введите тему статьи" />
             <button class="download-button" id="download-button">Скачать</button>
         </div>
 
-        <!-- Keywords Section -->
+        <!-- Ключевые слова с случайными значениями скачиваний -->
         <div class="keywords" id="keywords-container">
-            <div class="keyword">Курсовые работы <span class="keyword-number">10235</span></div>
-            <div class="keyword">Дипломные работы <span class="keyword-number">9532</span></div>
-            <div class="keyword">Контрольные работы <span class="keyword-number">12005</span></div>
-            <div class="keyword">Рефераты <span class="keyword-number">8430</span></div>
-            <div class="keyword">Эссе <span class="keyword-number">6200</span></div>
-            <div class="keyword">Магистерские диссертации <span class="keyword-number">3015</span></div>
-        </div>
-
-        <!-- Reviews Section -->
-        <div class="reviews-section" id="reviews">
-            <h2>Отзывы клиентов</h2>
-            <div class="reviews">
-                <div class="review">
-                    <h4>Анастасия Петрова</h4>
-                    <p>Спасибо команде за помощь! Я смогла успешно сдать дипломную работу!</p>
-                </div>
-                <div class="review">
-                    <h4>Сергей Ковалёв</h4>
-                    <p>Отличная работа! Все было сделано быстро и качественно.</p>
-                </div>
-                <div class="review">
-                    <h4>Елена Смирнова</h4>
-                    <p>Рекомендую! Отличная поддержка и профессионализм!</p>
-                </div>
-            </div>
+            <!-- Ключевые слова будут добавлены динамически через JavaScript -->
         </div>
 
         <!-- About Us Section -->
-        <div id="about">
+        <section id="about">
             <h2>О нас</h2>
-            <p>Мы предоставляем качественные услуги по написанию учебных работ для студентов. Наша команда состоит из профессиональных авторов с большим опытом работы в данной области.</p>
+            <p>Мы - команда единомышленников, которые понимают, насколько сложной и напряжённой может быть студенческая жизнь. Наше желание - помочь студентам справляться с учебными заданиями, будь то курсовые работы, дипломы или рефераты. Мы работаем на добровольной основе, стремясь облегчить вам процесс учёбы и поддержать в трудные моменты.</p>
+            <p>Мы знаем, как важно успевать всё вовремя, поэтому готовы предложить свою помощь в написании различных учебных работ. Наш подход основан на личном опыте, взаимопомощи и искреннем стремлении сделать вашу учебу чуть легче. Работаем на волонтерских началах.</p>
+        </section>
+
+        <!-- Отзывы -->
+        <div class="reviews-section" id="reviews">
+            <h2>Отзывы наших студентов</h2>
+            <div class="reviews">
+                <div class="review">
+                    <h4>Анна Петрова</h4>
+                    <p>Отличный сервис! Очень помогли с курсовой работой, все было выполнено в срок. Рекомендую!</p>
+                </div>
+                <div class="review">
+                    <h4>Максим Иванов</h4>
+                    <p>Благодаря вам, защитил диплом на "отлично"! Качественная работа и оперативная поддержка.</p>
+                </div>
+                <div class="review">
+                    <h4>Елена Смирнова</h4>
+                    <p>Диплом был готов за неделю до сдачи, очень довольна! Спасибо огромное за помощь.</p>
+                </div>
+            </div>
+            <button class="show-more-button">Показать больше отзывов</button>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>© 2024 studres.ru</p>
+    <footer id="contact">
+        <p>Свяжитесь с нами: info@dlya-studentov.com</p>
     </footer>
 
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="modal-text">Скачать статью по теме:</p>
+            <button class="close-button" id="close-button">Закрыть</button>
+        </div>
+    </div>
+
     <script>
-        // Логика показа кнопки "Скачать"
-        const inputField = document.getElementById('article-topic');
-        const downloadButton = document.getElementById('download-button');
-
-        inputField.addEventListener('input', function() {
-            if (inputField.value.trim() !== '') {
-                downloadButton.style.display = 'block';
-            } else {
-                downloadButton.style.display = 'none';
-            }
-        });
-
-        // Генерация ключевых слов с случайным количеством скачиваний
+        // Случайные значения скачиваний
         const keywords = [
             { name: "Курсовые работы", downloads: getRandomDownloads() },
             { name: "Дипломные работы", downloads: getRandomDownloads() },
@@ -301,13 +385,52 @@
         }
 
         const keywordsContainer = document.getElementById('keywords-container');
-        keywords.forEach((keyword, index) => {
+        keywords.forEach(keyword => {
             const keywordElement = document.createElement('div');
             keywordElement.classList.add('keyword');
-            // Оттенки серого
-            keywordElement.style.backgroundColor = `#b0b0b0`;
             keywordElement.innerHTML = `${keyword.name} <span class="keyword-number">${keyword.downloads}</span>`;
             keywordsContainer.appendChild(keywordElement);
+        });
+
+        // Modal logic
+        const modal = document.getElementById('modal');
+        const modalText = document.getElementById('modal-text');
+        const closeButton = document.getElementById('close-button');
+
+        document.getElementById('download-button').addEventListener('click', function() {
+            const topic = document.getElementById('article-topic').value;
+            if (topic) {
+                modalText.textContent = `Скачать статью по теме: "${topic}"?`;
+                modal.style.display = 'block';
+            }
+        });
+
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside of modal content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        // Показываем кнопку "Скачать" только после ввода текста
+        const inputField = document.getElementById('article-topic');
+        const downloadButton = document.getElementById('download-button');
+        inputField.addEventListener('input', function() {
+            if (inputField.value.trim() !== '') {
+                downloadButton.style.display = 'inline-block';
+            } else {
+                downloadButton.style.display = 'none';
+            }
+        });
+
+        // Show more reviews button
+        const showMoreButton = document.querySelector('.show-more-button');
+        showMoreButton.addEventListener('click', function() {
+            alert('Показать больше отзывов: этот функционал можно добавить позже.');
         });
     </script>
 
