@@ -100,13 +100,13 @@
             width: calc(100% - 150px); /* Уменьшаем ширину для кнопки */
             font-size: 18px;
             margin-right: 10px; /* Отступ между input и кнопкой */
-            transition: background-color 0.2s; /* Плавный переход цвета */
+            transition: transform 0.2s; /* Плавный переход размера */
             background-color: #202020; /* Основной цвет фона */
+            color: #fff; /* Цвет текста */
         }
 
         .input-section input:hover {
-            background-color: #D3D3D3; /* Светло-серый при наведении */
-            color: #181818; /* Цвет текста при наведении */
+            transform: scale(1.05); /* Чуть увеличивается при наведении */
         }
 
         .download-button {
