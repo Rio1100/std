@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #1e1e1e, #d3d3d3); /* Темно-серый к светло-серому градиент */
+            background-color: #181818;
             color: #fff;
             margin: 0;
             padding: 0;
@@ -323,73 +323,106 @@
             <button class="download-button" id="download-button">Скачать</button>
         </div>
 
-        <!-- Ключевые слова с случайными значениями скачиваний -->
-        <div class="keywords" id="keywords-section">
-            <div class="keyword">Курсовые работы <span class="keyword-number">150</span></div>
-            <div class="keyword">Дипломные работы <span class="keyword-number">200</span></div>
-            <div class="keyword">Контрольные работы <span class="keyword-number">180</span></div>
-            <div class="keyword">Рефераты <span class="keyword-number">300</span></div>
-            <div class="keyword">Эссе <span class="keyword-number">250</span></div>
+        <!-- Ключевые слова -->
+        <div class="keywords">
+            <div class="keyword" onclick="selectKeyword('Курсовая работа')">
+                Курсовая работа <span class="keyword-number">1</span>
+            </div>
+            <div class="keyword" onclick="selectKeyword('Дипломная работа')">
+                Дипломная работа <span class="keyword-number">2</span>
+            </div>
+            <div class="keyword" onclick="selectKeyword('Реферат')">
+                Реферат <span class="keyword-number">3</span>
+            </div>
+            <div class="keyword" onclick="selectKeyword('Эссе')">
+                Эссе <span class="keyword-number">4</span>
+            </div>
+            <div class="keyword" onclick="selectKeyword('Контрольная работа')">
+                Контрольная работа <span class="keyword-number">5</span>
+            </div>
         </div>
 
         <!-- About Us Section -->
-        <div id="about">
+        <section id="about">
             <h2>О нас</h2>
-            <p>Мы предоставляем высококачественные курсовые, дипломные работы и другие учебные материалы для студентов.</p>
-        </div>
+            <p>Мы предоставляем услуги по написанию курсовых и дипломных работ, рефератов и других учебных материалов. Наша команда профессиональных авторов готова помочь вам достичь успеха в учебе.</p>
+        </section>
 
         <!-- Reviews Section -->
-        <div class="reviews-section" id="reviews">
-            <h2>Отзывы наших клиентов</h2>
+        <section class="reviews-section" id="reviews">
+            <h2>Отзывы</h2>
             <div class="reviews">
                 <div class="review">
-                    <h4>Алексей</h4>
-                    <p>Отличный сервис! Работы выполнены качественно и в срок.</p>
+                    <h4>Анастасия</h4>
+                    <p>Отличная работа! Очень доволен качеством и сроками.</p>
                 </div>
                 <div class="review">
-                    <h4>Мария</h4>
-                    <p>Очень довольна результатом, рекомендую всем!</p>
+                    <h4>Игорь</h4>
+                    <p>Помогли в написании диплома. Рекомендую!</p>
                 </div>
                 <div class="review">
-                    <h4>Дмитрий</h4>
-                    <p>Лучший сайт для помощи студентам, всегда помогаю здесь!</p>
+                    <h4>Екатерина</h4>
+                    <p>Очень профессионально, я очень довольна!</p>
                 </div>
             </div>
-            <button class="show-more-button">Показать больше отзывов</button>
-        </div>
+            <button class="show-more-button" onclick="showMoreReviews()">Показать больше отзывов</button>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 dlya-studentov. Все права защищены.</p>
+        <p><a href="#contact" style="color: #FFD700;">Связаться с нами</a></p>
     </footer>
 
-    <!-- Modal for Download -->
-    <div id="modal" class="modal">
+    <!-- Modal -->
+    <div class="modal" id="download-modal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <p>Работа загружена успешно!</p>
+            <p>Скачивание статьи по теме: <span id="modal-topic"></span></p>
+            <button class="close-button" onclick="closeModal()">Закрыть</button>
         </div>
     </div>
 
     <script>
         const downloadButton = document.getElementById('download-button');
-        const modal = document.getElementById('modal');
-        const closeButton = document.querySelector('.close-button');
+        const articleTopicInput = document.getElementById('article-topic');
+        const modal = document.getElementById('download-modal');
+        const modalTopic = document.getElementById('modal-topic');
 
-        downloadButton.addEventListener('click', () => {
-            modal.style.display = 'block';
-        });
+        function selectKeyword(keyword) {
+            articleTopicInput.value = keyword;
+            downloadButton.style.display = 'block'; // Show the download button when a keyword is selected
+        }
 
-        closeButton.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
+        downloadButton.addEventListener('click', function () {
+            const topic = articleTopicInput.value;
+            if (topic) {
+                modalTopic.textContent = topic;
+                modal.style.display = 'block'; // Show the modal when the button is clicked
+                articleTopicInput.value = ''; // Clear the input after download
+                downloadButton.style.display = 'none'; // Hide the button after download
             }
         });
+
+        function closeModal() {
+            modal.style.display = 'none'; // Close the modal
+        }
+
+        // Show more reviews function (for demonstration)
+        function showMoreReviews() {
+            const newReview = document.createElement('div');
+            newReview.className = 'review';
+            newReview.innerHTML = '<h4>Ольга</h4><p>Работа выполнена на высшем уровне!</p>';
+            document.querySelector('.reviews').appendChild(newReview);
+        }
+
+        // Close the modal when the user clicks anywhere outside of it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
     </script>
+
 </body>
 </html>
