@@ -3,194 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Providing high-quality coursework, diploma works, essays, and more for students.">
-    <meta name="keywords" content="курсовые работы, дипломные работы, контрольные работы, рефераты, эссе">
-    <title>Примеры работ для студентов</title>
+    <title>Курсовые и дипломные работы для студентов</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #6A0DAD, #FF69B4);
-            color: #fff;
+            background-color: #635DFF; /* Фиолетовый фон */
+            background-image: url('/mnt/data/ideas-for-website.png'); /* Загрузка изображения как фон */
+            background-size: cover; /* Покрытие всего фона */
+            color: #333;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            scroll-behavior: smooth;
         }
 
         /* Header */
         .header {
-            background-color: transparent;
+            background-color: #1a1a1a;
             color: #fff;
-            padding: 20px;
-            text-align: left;
-            font-size: 28px;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
             font-weight: bold;
             width: 100%;
-            text-transform: uppercase;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
         }
 
         /* Navigation Menu */
         nav {
-            background-color: transparent;
-            padding: 15px;
+            background-color: #ffffffc7; /* Полупрозрачный белый */
+            padding: 10px;
             width: 100%;
             display: flex;
             justify-content: center;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15); /* Тень */
+            margin-bottom: 10px;
+            border-radius: 10px; /* Закругленные углы */
         }
 
         nav a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
-            font-size: 18px;
-            margin: 0 15px;
+            font-size: 14px;
+            margin: 0 8px;
+            padding: 8px;
+            border-radius: 5px;
         }
 
         nav a:hover {
-            color: #FF69B4;
-            text-decoration: underline;
+            background-color: #f0f0f0;
         }
 
         /* Main container */
         .container {
+            background: #fff;
             padding: 20px;
-            text-align: center;
-            max-width: 1200px;
-            width: 100%;
-            margin-top: 20px;
+            border-radius: 12px; /* Более сильное округление */
+            text-align: left;
+            max-width: 1000px;
+            width: 90%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Глубокая тень */
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 40px;
-            color: #fff;
+            font-size: 24px;
+            color: #333;
             text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Добавлена тень к тексту */
+        }
+
+        p.subtitle {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
         }
 
         /* Input and button section */
         .input-section {
-            margin-top: 30px;
+            margin-top: 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             width: 100%;
         }
 
         .input-section input {
-            padding: 15px;
-            border: 2px solid #fff;
-            border-radius: 5px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
             width: 100%;
-            max-width: 400px;
-            font-size: 18px;
+            font-size: 14px;
             margin-bottom: 10px;
-            background-color: transparent;
-            color: #fff;
         }
 
         .download-button {
             display: none;
-            background-color: transparent;
+            background-color: #0066cc;
             color: #fff;
-            padding: 10px 20px;
-            border: 2px solid #fff;
-            border-radius: 5px;
-            font-size: 18px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
             cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Тень на кнопке */
         }
 
         .download-button:hover {
-            background-color: #FF69B4;
-            color: #fff;
+            background-color: #005bb5;
         }
 
-        /* Keywords */
+        /* Keywords Section */
         .keywords {
             margin-top: 20px;
-            display: flex;
-            justify-content: space-evenly;
-            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
 
         .keyword {
-            background-color: rgba(255, 105, 180, 0.8); /* Light pink */
-            padding: 15px 20px;
+            background-color: #f4c4d4;
+            padding: 10px;
             border-radius: 5px;
-            font-size: 18px;
-            color: #fff;
-            transition: transform 0.2s;
-            width: 150px;
-            text-align: center;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Тень под каждым блоком */
         }
 
-        .keyword:hover {
-            background-color: #FF69B4;
+        .keyword-number {
+            background-color: #c88fb1;
             color: #fff;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        /* About Us Section */
+        #about {
+            margin-top: 20px;
+            padding: 20px;
+            background: linear-gradient(to bottom right, #f9d7e6, #d1a5d3); /* Градиент */
+            border-radius: 8px;
+            color: #333;
+        }
+
+        #about h2 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        #about p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-top: 10px;
         }
 
         /* Reviews Section */
         .reviews-section {
-            margin-top: 40px;
-        }
-
-        .reviews-section h2 {
-            font-size: 32px;
-            color: #fff;
-            margin-bottom: 30px;
+            margin-top: 20px;
         }
 
         .reviews {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .review {
-            background-color: rgba(106, 13, 173, 0.8); /* Light purple */
-            padding: 20px;
-            border-radius: 5px;
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
             width: 30%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-right: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Более выразительная тень */
             text-align: left;
-        }
-
-        .review h4 {
-            font-size: 20px;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .review p {
-            font-size: 16px;
-            color: #fff;
+            font-size: 14px;
         }
 
         /* Footer */
         footer {
-            background-color: transparent;
+            background-color: #1a1a1a;
             color: #fff;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             width: 100%;
-            margin-top: 40px;
+            margin-top: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Тень на футере */
         }
 
         footer p {
-            color: #fff;
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .reviews {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .review {
-                width: 90%;
-                margin-bottom: 20px;
-            }
+            margin: 0;
         }
     </style>
 </head>
@@ -198,7 +207,7 @@
 
     <!-- Header -->
     <header class="header">
-        Примеры сайтов
+        Курсовые и дипломные работы
     </header>
 
     <!-- Navigation Menu -->
@@ -211,63 +220,45 @@
 
     <!-- Main Content -->
     <main class="container">
-        <h1>Создание лучших сайтов для студентов</h1>
+        <h1>Помощь студентам в написании учебных работ</h1>
+        <p class="subtitle">Заказать курсовую, дипломную работу, эссе и реферат быстро и качественно.</p>
 
-        <!-- Input and Download Button -->
+        <!-- Input Section -->
         <div class="input-section">
             <input type="text" id="article-topic" placeholder="Введите тему статьи" />
-            <button class="download-button" id="download-button">Скачать</button>
+            <button class="download-button" id="download-button">Скачать статью по теме</button>
         </div>
 
-        <!-- Ключевые слова -->
-        <div class="keywords" id="keywords-container">
-            <div class="keyword">Курсовые работы</div>
-            <div class="keyword">Дипломные работы</div>
-            <div class="keyword">Контрольные работы</div>
-            <div class="keyword">Рефераты</div>
-            <div class="keyword">Эссе</div>
-            <div class="keyword">Магистерские диссертации</div>
-        </div>
+        <!-- Keywords Section -->
+        <div class="keywords" id="keywords-container"></div>
 
-        <!-- Отзывы -->
+        <!-- About Us Section -->
+        <section id="about">
+            <h2>О нас</h2>
+            <p>Мы - команда единомышленников, которые понимают, насколько сложной и напряжённой может быть студенческая жизнь. Наше желание - помочь студентам справляться с учебными заданиями, будь то курсовые работы, дипломы или рефераты.</p>
+            <p>Мы знаем, как важно успевать всё вовремя, поэтому готовы предложить свою помощь. Наш подход основан на личном опыте, взаимопомощи и искреннем стремлении сделать вашу учебу чуть легче.</p>
+        </section>
+
+        <!-- Reviews Section -->
         <div class="reviews-section" id="reviews">
-            <h2>Отзывы наших студентов</h2>
             <div class="reviews">
                 <div class="review">
-                    <h4>Анна Петрова</h4>
-                    <p>Отличный сервис! Очень помогли с курсовой работой, все было выполнено в срок. Рекомендую!</p>
+                    "Отличная работа! Быстро и качественно."
                 </div>
                 <div class="review">
-                    <h4>Максим Иванов</h4>
-                    <p>Благодаря вам, защитил диплом на "отлично"! Качественная работа и оперативная поддержка.</p>
+                    "Всё было выполнено вовремя и на высшем уровне!"
                 </div>
                 <div class="review">
-                    <h4>Елена Смирнова</h4>
-                    <p>Диплом был готов за неделю до сдачи, очень довольна! Спасибо огромное за помощь.</p>
+                    "Сотрудничество превзошло все ожидания!"
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer id="contact">
-        <p>Свяжитесь с нами: info@primery-site.ru</p>
+    <footer>
+        <p>© 2024 Курсовые и дипломные работы для студентов</p>
     </footer>
-
-    <script>
-        // Появление кнопки "Скачать" при вводе текста
-        const inputField = document.getElementById('article-topic');
-        const downloadButton = document.getElementById('download-button');
-
-        inputField.addEventListener('input', function() {
-            if (inputField.value.trim() !== '') {
-                downloadButton.style.display = 'inline-block';
-            } else {
-                downloadButton.style.display = 'none';
-            }
-        });
-
-    </script>
 
 </body>
 </html>
