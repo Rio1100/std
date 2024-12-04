@@ -9,7 +9,10 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #181818;
+            background-image: url('https://studres.ru/templates/main/img/background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #fff;
             margin: 0;
             padding: 0;
@@ -19,9 +22,8 @@
             scroll-behavior: smooth;
         }
 
-        /* Header */
         .header {
-            background-color: #181818;
+            background-color: rgba(24, 24, 24, 0.9);
             color: #FFD700;
             padding: 20px;
             text-align: left;
@@ -29,12 +31,11 @@
             font-weight: bold;
             width: 100%;
             text-transform: uppercase;
-            margin-left: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        /* Navigation Menu */
         nav {
-            background-color: #202020;
+            background-color: rgba(32, 32, 32, 0.9);
             padding: 15px;
             width: 100%;
             display: flex;
@@ -54,9 +55,8 @@
             color: #FF4500;
         }
 
-        /* Main container */
         .container {
-            background: linear-gradient(to bottom, #181818, #202020);
+            background: rgba(24, 24, 24, 0.9);
             padding: 40px;
             border-radius: 10px;
             text-align: left;
@@ -65,17 +65,9 @@
             margin-top: 20px;
         }
 
-        h1 {
-            font-size: 36px;
+        h1, h2 {
             color: #FFD700;
             text-align: center;
-        }
-
-        h2 {
-            font-size: 28px;
-            color: #FFD700;
-            text-align: center;
-            margin-bottom: 20px;
         }
 
         p.subtitle {
@@ -85,60 +77,62 @@
             color: #FFD700;
         }
 
-        /* Form container */
-        .form-container {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-            width: 300px;
+        .reviews-section {
+            margin-top: 40px;
         }
 
-        .form-container form {
-            background-color: #202020;
+        .reviews-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .reviews {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .review {
+            background-color: #252525;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-bottom: 20px;
         }
 
-        .form-container input {
-            padding: 10px;
-            background-color: #303030;
+        .review h4 {
+            font-size: 20px;
             color: #FFD700;
-            border: 1px solid #FFD700;
-            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .review p {
             font-size: 16px;
+            color: #fff;
         }
 
-        .form-container button {
-            padding: 10px;
-            background-color: #FFD700;
-            color: #181818;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.2s;
+        footer {
+            background-color: rgba(24, 24, 24, 0.9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            margin-top: 40px;
         }
 
-        .form-container button:hover {
-            background-color: #FFC107;
+        footer p a {
+            color: #FFD700;
         }
 
-        /* Mobile styles */
         @media (max-width: 768px) {
-            .form-container {
-                position: static;
-                width: 100%;
-                margin: 0 auto;
-                padding: 10px;
+            .reviews {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .form-container form {
-                width: 100%;
+            .review {
+                width: 90%;
             }
         }
     </style>
@@ -148,21 +142,39 @@
     <nav>
         <a href="#about">О нас</a>
         <a href="#reviews">Отзывы</a>
-        <a href="#keywords">Контакты</a>
+        <a href="#contacts">Контакты</a>
     </nav>
-
-    <!-- Форма -->
-    <div class="form-container">
-        <form action="#" method="POST">
-            <input type="text" name="name" placeholder="Имя" required>
-            <input type="text" name="contact" placeholder="Email или Telegram" required>
-            <button type="submit">Отправить</button>
-        </form>
-    </div>
 
     <main class="container">
         <h1>Лучший сервис для студентов!</h1>
-        <p class="subtitle">Создай сам дипломные и курсовые работы с использованием нейросетей — быстро, качественно и уникально!</p>
+        <p class="subtitle">Создавайте уникальные курсовые, дипломные работы и многое другое с нашей помощью.</p>
+
+        <section id="about">
+            <h2>О нас</h2>
+            <p>Мы помогаем студентам успешно завершать обучение, предоставляя качественные курсовые и дипломные работы, написанные с учетом современных требований.</p>
+        </section>
+
+        <section class="reviews-section" id="reviews">
+            <h2>Отзывы</h2>
+            <div class="reviews">
+                <div class="review">
+                    <h4>Анастасия</h4>
+                    <p>Отличная работа! Очень довольна качеством и сроками.</p>
+                </div>
+                <div class="review">
+                    <h4>Игорь</h4>
+                    <p>Помогли в написании диплома. Рекомендую!</p>
+                </div>
+                <div class="review">
+                    <h4>Екатерина</h4>
+                    <p>Очень профессионально, я в восторге!</p>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2024 Все права защищены. <a href="#contacts">Связаться с нами</a></p>
+    </footer>
 </body>
 </html>
