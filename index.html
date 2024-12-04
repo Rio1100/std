@@ -22,6 +22,7 @@
             scroll-behavior: smooth;
         }
 
+        /* Header */
         .header {
             background-color: rgba(24, 24, 24, 0.9);
             color: #FFD700;
@@ -31,9 +32,9 @@
             font-weight: bold;
             width: 100%;
             text-transform: uppercase;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
+        /* Navigation Menu */
         nav {
             background-color: rgba(32, 32, 32, 0.9);
             padding: 15px;
@@ -55,8 +56,9 @@
             color: #FF4500;
         }
 
+        /* Main container */
         .container {
-            background: rgba(24, 24, 24, 0.9);
+            background: rgba(24, 24, 24, 0.8);
             padding: 40px;
             border-radius: 10px;
             text-align: left;
@@ -65,9 +67,17 @@
             margin-top: 20px;
         }
 
-        h1, h2 {
+        h1 {
+            font-size: 36px;
             color: #FFD700;
             text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         p.subtitle {
@@ -77,22 +87,48 @@
             color: #FFD700;
         }
 
-        .reviews-section {
-            margin-top: 40px;
+        /* Input and button section */
+        .input-section {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
         }
 
-        .reviews-section h2 {
-            margin-bottom: 20px;
+        .input-section input {
+            padding: 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            width: 75%;
+            font-size: 18px;
+            background-color: #fff;
+            color: #181818;
         }
 
+        .download-button {
+            background-color: #FFD700;
+            color: #181818;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .download-button:hover {
+            background-color: #FFC107;
+        }
+
+        /* Reviews Section */
         .reviews {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            margin-top: 40px;
         }
 
         .review {
-            background-color: #252525;
+            background-color: rgba(37, 37, 37, 0.9);
             padding: 20px;
             border-radius: 10px;
             width: 30%;
@@ -112,6 +148,7 @@
             color: #fff;
         }
 
+        /* Footer */
         footer {
             background-color: rgba(24, 24, 24, 0.9);
             color: white;
@@ -121,18 +158,69 @@
             margin-top: 40px;
         }
 
-        footer p a {
+        footer p {
+            margin: 10px 0;
             color: #FFD700;
         }
 
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: #181818;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #FFD700;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .modal-content p {
+            color: #FFD700;
+            font-size: 18px;
+        }
+
+        .close-button {
+            background-color: #FFD700;
+            color: #181818;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .close-button:hover {
+            background-color: #FF6347;
+        }
+
+        /* Media Queries */
         @media (max-width: 768px) {
-            .reviews {
-                flex-direction: column;
-                align-items: center;
+            .review {
+                width: 100%;
             }
 
-            .review {
-                width: 90%;
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            p.subtitle {
+                font-size: 18px;
             }
         }
     </style>
@@ -142,39 +230,33 @@
     <nav>
         <a href="#about">О нас</a>
         <a href="#reviews">Отзывы</a>
-        <a href="#contacts">Контакты</a>
+        <a href="#keywords">Контакты</a>
     </nav>
-
     <main class="container">
         <h1>Лучший сервис для студентов!</h1>
-        <p class="subtitle">Создавайте уникальные курсовые, дипломные работы и многое другое с нашей помощью.</p>
-
-        <section id="about">
-            <h2>О нас</h2>
-            <p>Мы помогаем студентам успешно завершать обучение, предоставляя качественные курсовые и дипломные работы, написанные с учетом современных требований.</p>
-        </section>
-
-        <section class="reviews-section" id="reviews">
-            <h2>Отзывы</h2>
-            <div class="reviews">
-                <div class="review">
-                    <h4>Анастасия</h4>
-                    <p>Отличная работа! Очень довольна качеством и сроками.</p>
-                </div>
-                <div class="review">
-                    <h4>Игорь</h4>
-                    <p>Помогли в написании диплома. Рекомендую!</p>
-                </div>
-                <div class="review">
-                    <h4>Екатерина</h4>
-                    <p>Очень профессионально, я в восторге!</p>
-                </div>
+        <p class="subtitle">Создай сам дипломные и курсовые работы с использованием нейросетей — быстро, качественно и уникально!</p>
+        <div class="input-section">
+            <input type="text" id="article-topic" placeholder="Введите тему статьи">
+            <button id="download-button" class="download-button">Скачать</button>
+        </div>
+        <section class="reviews">
+            <div class="review">
+                <h4>Анастасия</h4>
+                <p>Отличная работа! Очень доволен качеством и сроками.</p>
+            </div>
+            <div class="review">
+                <h4>Игорь</h4>
+                <p>Помогли в написании диплома. Рекомендую!</p>
+            </div>
+            <div class="review">
+                <h4>Екатерина</h4>
+                <p>Очень профессионально, я очень довольна!</p>
             </div>
         </section>
     </main>
-
     <footer>
-        <p>&copy; 2024 Все права защищены. <a href="#contacts">Связаться с нами</a></p>
+        <p>&copy; 2024 dlya-studentov. Все права защищены.</p>
+        <p><a href="#contact" style="color: #FFD700;">Связаться с нами</a></p>
     </footer>
 </body>
 </html>
