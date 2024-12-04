@@ -7,79 +7,162 @@
     <meta name="keywords" content="курсовые работы, дипломные работы, контрольные работы, рефераты, эссе">
     <title>Курсовые и дипломные работы</title>
     <style>
-        /* Весь CSS-код */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #181818;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        .header {
+            background-color: #181818;
+            color: #FFD700;
+            padding: 20px;
+            text-align: left;
+            font-size: 28px;
+            font-weight: bold;
+            width: 100%;
+            text-transform: uppercase;
+            margin-left: 30px;
+        }
+
+        /* Navigation Menu */
+        nav {
+            background-color: #202020;
+            padding: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #FF4500;
+        }
+
+        /* Main container */
+        .container {
+            background: linear-gradient(to bottom, #181818, #202020);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: left;
+            max-width: 1200px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #FFD700;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p.subtitle {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #FFD700;
+        }
+
+        /* Form container */
+        .form-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            width: 300px;
+        }
+
+        .form-container form {
+            background-color: #202020;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-container input {
+            padding: 10px;
+            background-color: #303030;
+            color: #FFD700;
+            border: 1px solid #FFD700;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            padding: 10px;
+            background-color: #FFD700;
+            color: #181818;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .form-container button:hover {
+            background-color: #FFC107;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .form-container {
+                position: static;
+                width: 100%;
+                margin: 0 auto;
+                padding: 10px;
+            }
+
+            .form-container form {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
     <div class="header">Курсовые и дипломные работы</div>
-
-    <!-- Navigation Menu -->
     <nav>
         <a href="#about">О нас</a>
         <a href="#reviews">Отзывы</a>
         <a href="#keywords">Контакты</a>
     </nav>
 
-    <!-- Main Container -->
+    <!-- Форма -->
+    <div class="form-container">
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Имя" required>
+            <input type="text" name="contact" placeholder="Email или Telegram" required>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+
     <main class="container">
         <h1>Лучший сервис для студентов!</h1>
         <p class="subtitle">Создай сам дипломные и курсовые работы с использованием нейросетей — быстро, качественно и уникально!</p>
-
-        <!-- Input Section -->
-        <div class="input-section">
-            <input type="text" id="article-topic" placeholder="Введите тему статьи">
-            <button id="download-button" class="download-button">Скачать</button>
-        </div>
-
-        <!-- Keywords Section -->
-        <div class="keywords" id="keywords-container"></div>
-
-        <!-- About Us Section -->
-        <section id="about">
-            <h2>О нас</h2>
-            <p>Мы - команда единомышленников, которые понимают, насколько сложной и напряжённой может быть студенческая жизнь...</p>
-        </section>
-
-        <!-- Reviews Section -->
-        <section class="reviews-section" id="reviews">
-            <h2>Отзывы</h2>
-            <div class="reviews">
-                <div class="review">
-                    <h4>Анастасия</h4>
-                    <p>Отличная работа! Очень доволен качеством и сроками.</p>
-                </div>
-                <div class="review">
-                    <h4>Игорь</h4>
-                    <p>Помогли в написании диплома. Рекомендую!</p>
-                </div>
-                <div class="review">
-                    <h4>Екатерина</h4>
-                    <p>Очень профессионально, я очень довольна!</p>
-                </div>
-            </div>
-            <button class="show-more-button" onclick="showMoreReviews()">Показать больше отзывов</button>
-        </section>
     </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 dlya-studentov. Все права защищены.</p>
-        <p><a href="#contact" style="color: #FFD700;">Связаться с нами</a></p>
-    </footer>
-
-    <!-- Modal -->
-    <div class="modal" id="download-modal">
-        <div class="modal-content">
-            <p>Скачивание статьи по теме: <span id="modal-topic"></span></p>
-            <button class="close-button" onclick="closeModal()">Закрыть</button>
-        </div>
-    </div>
-
-    <script>
-        // Весь JavaScript-код
-    </script>
-
 </body>
 </html>
